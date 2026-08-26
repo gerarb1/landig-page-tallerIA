@@ -1,0 +1,19 @@
+# dependencias
+node_modules/
+
+# build de Astro
+dist/
+.astro/
+
+# estado local de Wrangler (Cloudflare)
+.wrangler/
+
+# variables de entorno y secretos
+.env
+.env.local
+.dev.vars
+
+# editor / SO
+.DS_Store
+.vscode/*
+!.vscode/extensions.json

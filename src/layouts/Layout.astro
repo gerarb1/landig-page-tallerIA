@@ -1,0 +1,129 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Taller DBCA — Diseño Experimental con Inteligencia Artificial",
+  description = "Estructura modular de flujos de trabajo con IA aplicada a ciencias agropecuarias bajo metodología de Bloques Completos al Azar. Facilitador: Gerardo Burgos Castro (IASA - FCA - USFX).",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2346573C'><rect width='24' height='24' rx='2' fill='%23E8E4D6'/><path d='M4 4h7v7H4V4zm9 0h7v7h-7V4zm-9 9h7v7H4v-7zm9 0h7v7h-7v-7z' fill='%2346573C'/></svg>" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Preconnect Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body class="bg-papel text-tinta min-h-screen bg-field-grid selection:bg-musgo selection:text-papel flex flex-col justify-between">
+    
+    <!-- Top Field Ledger Bar with Facilitator Notice -->
+    <header class="border-b border-tinta/20 bg-niebla/90 backdrop-blur-sm sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex items-center px-2 py-0.5 border border-tinta bg-trigo/20 text-tinta font-bold tracking-wider text-[11px]">
+            EXP-2026 // USFX
+          </span>
+          <span class="text-tinta/90 font-medium text-[11px] sm:text-xs">
+            Facilitador: <strong class="text-tinta font-bold">Gerardo Burgos Castro</strong> <span class="text-tinta/50 hidden md:inline">(IASA / FCA — USFX)</span>
+          </span>
+        </div>
+        
+        <nav class="flex items-center gap-3 sm:gap-5 font-mono text-[11px] sm:text-xs">
+          <a href="#croquis-dbca" class="hover:text-musgo transition-colors flex items-center gap-1 font-semibold">
+            <span class="w-2 h-2 bg-musgo inline-block"></span>
+            CROQUIS
+          </a>
+          <a href="#modulo-fundamentos" class="hover:text-musgo transition-colors">T1: FUNDAMENTOS</a>
+          <a href="#modulo-notebooklm" class="hover:text-musgo transition-colors">T2: NOTEBOOKLM</a>
+          <a href="#modulo-gemini-gems" class="hover:text-musgo transition-colors">T3: GEMS</a>
+          <a href="#modulo-docs-casos" class="hover:text-musgo transition-colors">T4: DOCS</a>
+          <a href="#facilitador" class="hover:text-musgo text-musgo font-bold transition-colors">FACILITADOR</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <!-- Field Ledger Footer -->
+    <footer class="border-t-2 border-tinta bg-tierra text-papel/90 py-12 mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Institutional Strip in Footer for Neutral Rendering -->
+        <div class="bg-white/95 border border-papel/20 p-4 mb-8 text-tinta">
+          <div class="flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-tinta/80">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-musgo inline-block"></span>
+              <span class="font-bold">UNIVERSIDAD MAYOR, REAL Y PONTIFICIA DE SAN FRANCISCO XAVIER DE CHUQUISACA</span>
+            </div>
+            <div class="flex items-center gap-4 text-[11px]">
+              <span class="font-semibold text-musgo">INSTITUTO IASA</span>
+              <span>•</span>
+              <span class="font-semibold text-tierra">FACULTAD DE CIENCIAS AGRARIAS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-papel/10">
+          <div class="md:col-span-2 space-y-2">
+            <div class="flex items-center gap-2 font-mono text-xs text-trigo mb-2">
+              <span class="w-2 h-2 bg-trigo inline-block"></span>
+              PROTOCOLO DE TRANSFERENCIA TECNOLÓGICA
+            </div>
+            <h3 class="font-fraunces text-2xl text-papel">Taller de IA en Ciencias Agropecuarias</h3>
+            <p class="text-papel/70 text-sm max-w-md font-sans leading-relaxed">
+              Diseño metodológico estructurado en 4 parcelas técnicas de experimentación (DBCA) para optimizar la síntesis bibliográfica, asistentes fitosanitarios y reportes de campo con Inteligencia Artificial.
+            </p>
+            <div class="pt-2 font-mono text-xs text-trigo/90">
+              Facilitador: <strong class="text-papel">Gerardo Burgos Castro</strong>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-mono text-xs uppercase tracking-wider text-trigo mb-3">[TRATAMIENTOS]</h4>
+            <ul class="space-y-2 text-xs font-mono text-papel/80">
+              <li><a href="#modulo-fundamentos" class="hover:text-trigo transition-colors">T1. Arquitectura de Contexto</a></li>
+              <li><a href="#modulo-notebooklm" class="hover:text-trigo transition-colors">T2. Cuaderno Inteligente</a></li>
+              <li><a href="#modulo-gemini-gems" class="hover:text-trigo transition-colors">T3. Asistentes & Gems</a></li>
+              <li><a href="#modulo-docs-casos" class="hover:text-trigo transition-colors">T4. Automatización & Docs</a></li>
+              <li><a href="#facilitador" class="hover:text-trigo transition-colors text-trigo">Sobre el Facilitador</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-mono text-xs uppercase tracking-wider text-trigo mb-3">[METADATA]</h4>
+            <div class="space-y-1.5 text-xs font-mono text-papel/70">
+              <p>INSTITUCIÓN: <span class="text-papel">USFX / IASA / FCA</span></p>
+              <p>SEDE: <span class="text-papel">Sucre, Bolivia</span></p>
+              <p>DISEÑO: <span class="text-papel">Bloques Completos al Azar (DBCA)</span></p>
+              <p>ESTADO: <span class="text-trigo">En Ejecución (Cupos Llenos)</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono text-papel/60">
+          <p>© 2026 Gerardo Burgos Castro — IASA · FCA · USFX</p>
+          <div class="flex items-center gap-4">
+            <span class="inline-flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-musgo"></span>
+              ESTACIÓN EXPERIMENTAL ACTIVA
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

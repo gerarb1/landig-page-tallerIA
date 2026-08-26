@@ -1,0 +1,258 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroDBCA from '../components/HeroDBCA.astro';
+import PromptInspector from '../components/PromptInspector.astro';
+import FacilitadorCreditos from '../components/FacilitadorCreditos.astro';
+---
+
+<Layout title="Taller DBCA: Inteligencia Artificial en Ciencias Agropecuarias — Gerardo Burgos Castro (USFX)">
+  
+  <!-- Hero Section with DBCA Experimental Croquis -->
+  <HeroDBCA />
+
+  <!-- Divider Metric Ruler -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="border-t-2 border-dashed border-tinta/30 relative my-6">
+      <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-papel px-4 font-mono text-xs text-tinta/70 border border-tinta/20">
+        SECCIÓN METODOLÓGICA // TRATAMIENTOS DE CAMPO
+      </span>
+    </div>
+  </div>
+
+  <!-- Detailed Treatment Sections (T1 - T4) -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+    
+    <!-- TRATAMIENTO 1: FUNDAMENTOS -->
+    <div id="modulo-fundamentos" class="scroll-mt-20 border-2 border-tinta bg-niebla p-6 sm:p-8 shadow-field">
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4 mb-6">
+        <div class="flex items-center gap-3">
+          <span class="px-2.5 py-1 bg-musgo text-papel font-mono text-xs font-bold border border-tinta">
+            TRATAMIENTO T1
+          </span>
+          <span class="font-mono text-xs text-tinta/70">[COORDENADA: 01, A] // BLOQUE I</span>
+        </div>
+        <span class="font-mono text-xs text-trigo font-bold bg-tierra px-2.5 py-0.5">DURACIÓN: 2 HORAS</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-5 space-y-4">
+          <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold">
+            Fundamentos & Arquitectura de Contexto
+          </h2>
+          <p class="font-sans text-sm sm:text-base text-tinta/85 leading-relaxed">
+            Comprende los mecanismos de los Modelos de Lenguaje (LLMs) aplicados a ciencias agronómicas. Aprende a estructurar el marco de referencia experimental para eliminar alucinaciones y calibrar respuestas técnicas precisas.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-tinta/90 pt-2">
+            <li class="flex items-start gap-2">
+              <span class="text-musgo font-bold">▶</span>
+              <span>Anatomía de un prompt agronómico estructurado</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-musgo font-bold">▶</span>
+              <span>Control de alucinación y verificación de dosis/fuentes</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-musgo font-bold">▶</span>
+              <span>Técnicas de Few-Shot para taxonomía y fitosanidad</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7">
+          <PromptInspector 
+            protocolId="PROT-01"
+            title="Framing Experimental & Calibración de Rol"
+            role="Investigador en Fisiología y Nutrición Vegetal"
+            inputData="Condiciones de estrés hídrico, Conductividad eléctrica (dS/m)"
+            outputFormat="Diagnóstico fisiológico con sustento en fuentes científicas"
+            promptText={`[SISTEMA]: Eres un asistente técnico agronómico especializado en fisiología vegetal y nutrición de cultivos bajo condiciones de estrés abiótico.
+
+[REGLAS ESTRICTAS]:
+1. Basa cada afirmación en mecanismos fisiológicos comprobados.
+2. Si un dato no es concluyente o carece de contexto edafoclimático, decláralo explícitamente como "requiere validación en campo".
+3. Formatea la respuesta con:
+   - Diagnóstico probable
+   - Parámetros críticos a monitorear
+   - Protocolo de muestreo foliar sugerido`}
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- TRATAMIENTO 2: NOTEBOOKLM -->
+    <div id="modulo-notebooklm" class="scroll-mt-20 border-2 border-tinta bg-papel p-6 sm:p-8 shadow-field">
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4 mb-6">
+        <div class="flex items-center gap-3">
+          <span class="px-2.5 py-1 bg-musgo text-papel font-mono text-xs font-bold border border-tinta">
+            TRATAMIENTO T2
+          </span>
+          <span class="font-mono text-xs text-tinta/70">[COORDENADA: 01, B] // BLOQUE I</span>
+        </div>
+        <span class="font-mono text-xs text-trigo font-bold bg-tierra px-2.5 py-0.5">DURACIÓN: 2 HORAS</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-5 space-y-4">
+          <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold">
+            NotebookLM como Cuaderno de Campo Inteligente
+          </h2>
+          <p class="font-sans text-sm sm:text-base text-tinta/85 leading-relaxed">
+            Convierte cientos de PDFs de literatura técnica, fichas de registro de cultivares y manuales de plagas en una base de conocimiento fundamentada que cita fuentes exactas con cada respuesta.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-tinta/90 pt-2">
+            <li class="flex items-start gap-2">
+              <span class="text-musgo font-bold">▶</span>
+              <span>Carga estructurada de fuentes científicas y manuales ICA/SAG/INIFAP</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-musgo font-bold">▶</span>
+              <span>Generación de guías de campo y preguntas frecuentes automáticas</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-musgo font-bold">▶</span>
+              <span>Extracción de tablas comparativas de tolerancia a plagas</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7">
+          <PromptInspector 
+            protocolId="PROT-02"
+            title="Síntesis de Literatura & Fichas de Variedades"
+            role="Curador de Información Técnica Agronómica"
+            inputData="Corpus de 12 papers sobre resistencia a roya y sequía"
+            outputFormat="Matriz comparativa Markdown con citas directas al párrafo de origen"
+            promptText={`[INSTRUCCIÓN EN NOTEBOOKLM]:
+A partir de las fuentes cargadas correspondientes a los ensayos de rendimiento 2024-2025:
+
+1. Elabora una tabla con las siguientes columnas:
+   - Genotipo / Variedad
+   - Rendimiento promedio (t/ha)
+   - Incidencia de roya (%)
+   - Días a floración
+2. Cita la fuente exacta (documento y página) para cada cifra.
+3. Identifica si existen contradicciones entre las localidades evaluadas.`}
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- TRATAMIENTO 3: GEMINI & GEMS -->
+    <div id="modulo-gemini-gems" class="scroll-mt-20 border-2 border-tinta bg-niebla p-6 sm:p-8 shadow-field">
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4 mb-6">
+        <div class="flex items-center gap-3">
+          <span class="px-2.5 py-1 bg-musgo text-papel font-mono text-xs font-bold border border-tinta">
+            TRATAMIENTO T3
+          </span>
+          <span class="font-mono text-xs text-tinta/70">[COORDENADA: 02, A] // BLOQUE II</span>
+        </div>
+        <span class="font-mono text-xs text-trigo font-bold bg-tierra px-2.5 py-0.5">DURACIÓN: 2.5 HORAS</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-5 space-y-4">
+          <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold">
+            Gemini & Gems Especializados
+          </h2>
+          <p class="font-sans text-sm sm:text-base text-tinta/85 leading-relaxed">
+            Diseña y entrena tus propios "Gems" (asistentes personalizados con instrucciones permanentes) para tareas recurrentes de campo: cálculo de dosis de pulverización, muestreo secuencial y diagnóstico fotográfico asistido.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-tinta/90 pt-2">
+            <li class="flex items-start gap-2">
+              <span class="text-musgo font-bold">▶</span>
+              <span>Creación de Gem para calibración de pulverizadoras y boquillas</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-musgo font-bold">▶</span>
+              <span>Gem auditor de datos de campo y detección de outliers</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-musgo font-bold">▶</span>
+              <span>Análisis multimodal: interpretación de imágenes de hojas sintomáticas</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7">
+          <PromptInspector 
+            protocolId="PROT-03"
+            title="Definición del System Prompt del Gem"
+            role="Auditor de Calidad de Datos Agrícolas & Calibración"
+            inputData="Registros brutos de pesaje de parcelas y recuento de espigas"
+            outputFormat="Reporte de consistencia y alertas de posibles errores de transcripción"
+            promptText={`[CONFIGURACIÓN DEL GEM]: "AgroData Quality Auditor"
+
+[ROL]: Eres un auditor estadístico especializado en ensayos DBCA. Tu función es verificar la integridad de los datos levantados en campo antes de correr análisis en R o Python.
+
+[REGLAS]:
+- Verifica si los valores de rendimiento se encuentran dentro del rango biológico admisible (CV esperado < 15%).
+- Señala si hay parcelas perdidas o valores extremos (> 2.5 desviaciones estándar).
+- Genera el código R preliminar para visualización de boxplots por bloque.`}
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- TRATAMIENTO 4: DOCS & AUTOMATIZACIÓN -->
+    <div id="modulo-docs-casos" class="scroll-mt-20 border-2 border-tinta bg-papel p-6 sm:p-8 shadow-field">
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4 mb-6">
+        <div class="flex items-center gap-3">
+          <span class="px-2.5 py-1 bg-musgo text-papel font-mono text-xs font-bold border border-tinta">
+            TRATAMIENTO T4
+          </span>
+          <span class="font-mono text-xs text-tinta/70">[COORDENADA: 02, B] // BLOQUE II</span>
+        </div>
+        <span class="font-mono text-xs text-trigo font-bold bg-tierra px-2.5 py-0.5">DURACIÓN: 2 HORAS</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-5 space-y-4">
+          <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold">
+            Docs & Automatización de Informes Técnicos
+          </h2>
+          <p class="font-sans text-sm sm:text-base text-tinta/85 leading-relaxed">
+            Ensamblaje del flujo completo: desde los datos brutos de la libreta de campo hasta el informe técnico estructurado en Google Docs, listo para clientes, comités científicos o directivos.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-tinta/90 pt-2">
+            <li class="flex items-start gap-2">
+              <span class="text-musgo font-bold">▶</span>
+              <span>Plantillas dinámicas de informes DBCA con IA integrada</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-musgo font-bold">▶</span>
+              <span>Redacción automatizada de resúmenes ejecutivos y conclusiones técnicas</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-musgo font-bold">▶</span>
+              <span>Flujo de revisión crítica y estandarización de formatos</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7">
+          <PromptInspector 
+            protocolId="PROT-04"
+            title="Generación de Informe Técnico DBCA"
+            role="Redactor Científico y Técnico Agronómico"
+            inputData="Resultados estadísticos ANOVA y prueba Tukey (p < 0.05)"
+            outputFormat="Informe técnico con introducción, metodología, discusión y recomendaciones"
+            promptText={`[INSTRUCCIÓN]: Redacta la sección de Discusión de Resultados para el informe final del ensayo "Evaluación de Bioinsumos en Tomate bajo DBCA".
+
+[DATOS CLAVE]:
+- Tratamiento T3 (Bioestimulante foliar) superó significativamente al testigo (T0) en un 24.3% de biomasa fresca (Tukey p = 0.012).
+- No se observaron diferencias significativas en número de frutos por planta entre T2 y T3.
+
+[REQUISITOS]:
+- Explica los resultados basándote en la actividad auxínica y la absorción de nutrientes.
+- Mantén un tono técnico riguroso, sin adjetivos comerciales.`}
+          />
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Instructor & Institutional Credits Section -->
+  <FacilitadorCreditos />
+
+</Layout>

@@ -1,0 +1,203 @@
+---
+// HeroDBCA.astro - Componente central con Croquis Experimental DBCA
+---
+
+<section id="croquis-dbca" class="relative pt-8 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+  <!-- Technical Grid Header -->
+  <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4 mb-8">
+    <div class="flex items-center gap-2 font-mono text-xs text-tinta/80">
+      <span class="inline-block w-2.5 h-2.5 bg-musgo"></span>
+      <span class="font-bold text-tinta">CROQUIS TÉCNICO // ESTACIÓN EXPERIMENTAL</span>
+      <span class="text-tinta/40">|</span>
+      <span>DISEÑO EN 4 PARCELAS MODULARES (T1-T4)</span>
+    </div>
+    <div class="font-mono text-xs text-tinta/70 flex items-center gap-4">
+      <span>ESTADO: <strong class="text-tinta">TALLER EN EJECUCIÓN</strong></span>
+      <span class="inline-flex items-center gap-1.5 px-2 py-0.5 bg-niebla border border-tinta/30 text-[11px]">
+        <span class="w-1.5 h-1.5 rounded-full bg-musgo"></span>
+        CUPOS COMPLETOS
+      </span>
+    </div>
+  </div>
+
+  <!-- Hero Main Heading -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start mb-12">
+    <div class="lg:col-span-6 space-y-5">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-niebla border border-tinta text-xs font-mono">
+        <span class="text-trigo font-bold">★</span>
+        <span>METODOLOGÍA AGRO-COMPUTACIONAL // USFX - IASA</span>
+      </div>
+
+      <h1 class="font-fraunces text-4xl sm:text-5xl lg:text-6xl text-tinta font-bold leading-[1.08] tracking-tight">
+        Diseño Experimental de Flujos de Trabajo <span class="italic font-normal text-musgo">con IA</span>
+      </h1>
+
+      <p class="font-sans text-base sm:text-lg text-tinta/85 leading-relaxed max-w-xl">
+        Estructura tus investigaciones, síntesis bibliográficas y protocolos de campo bajo la lógica del 
+        <strong class="text-tinta font-semibold">Diseño de Bloques Completos al Azar (DBCA)</strong>: 4 parcelas técnicas para dominar NotebookLM, Gems especializados y automatización en Docs.
+      </p>
+
+      <!-- Action buttons & Coordinates -->
+      <div class="pt-2 flex flex-wrap items-center gap-4">
+        <a 
+          href="#modulo-fundamentos" 
+          class="inline-flex items-center justify-center px-6 py-3.5 bg-musgo text-papel font-mono text-xs font-bold tracking-wider uppercase border-2 border-tinta shadow-field hover:shadow-field-hover hover:bg-tierra transition-all"
+        >
+          EXPLORAR TRATAMIENTOS (T1–T4) →
+        </a>
+        <a 
+          href="#facilitador" 
+          class="inline-flex items-center justify-center px-6 py-3.5 bg-niebla text-tinta font-mono text-xs font-bold tracking-wider uppercase border-2 border-tinta shadow-field hover:bg-papel transition-all"
+        >
+          SOBRE EL FACILITADOR
+        </a>
+      </div>
+
+      <!-- Field notes metadata box -->
+      <div class="p-4 bg-niebla/60 border-l-4 border-musgo font-mono text-xs space-y-1.5 text-tinta/80">
+        <div class="font-bold text-tinta flex items-center justify-between">
+          <span>// NOTA DE CAMPO:</span>
+          <span class="text-trigo font-bold">NIVEL PRÁCTICO</span>
+        </div>
+        <p class="font-sans text-xs text-tinta/70">
+          Haz clic o sitúa el cursor sobre cualquier parcela del croquis a la derecha para inspeccionar los objetivos, tratamientos y prompts de cada módulo.
+        </p>
+      </div>
+    </div>
+
+    <!-- SIGNATURE ELEMENT: Interactive DBCA Plot Grid Component -->
+    <div class="lg:col-span-6">
+      <div class="border-2 border-tinta bg-niebla p-4 sm:p-6 shadow-field-lg relative">
+        
+        <!-- Croquis Coordinate Rulers -->
+        <div class="flex items-center justify-between font-mono text-[10px] text-tinta/60 border-b border-tinta/20 pb-2 mb-4">
+          <span class="flex items-center gap-1.5 font-bold text-tinta">
+            <svg class="w-3.5 h-3.5 text-musgo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>
+            PLANO DEL ENSAYO [GRID 2×2]
+          </span>
+          <div class="flex items-center gap-3">
+            <span>EJE X: [0m — 20m]</span>
+            <span>EJE Y: [0m — 20m]</span>
+          </div>
+        </div>
+
+        <!-- 4 Field Plots (T1 - T4) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 relative">
+          
+          <!-- Treatment 1: Fundamentos -->
+          <a 
+            href="#modulo-fundamentos" 
+            class="group block p-4 bg-papel border-2 border-tinta hover:border-musgo hover:shadow-field transition-all relative overflow-hidden animate-plot-1"
+          >
+            <div class="absolute top-0 right-0 bg-musgo text-papel font-mono text-[10px] font-bold px-2 py-0.5 border-b border-l border-tinta group-hover:bg-trigo group-hover:text-tierra transition-colors">
+              COORD [01,A]
+            </div>
+            
+            <div class="font-mono text-[11px] text-musgo font-bold tracking-wider mb-1">
+              TRATAMIENTO T1
+            </div>
+            <h3 class="font-fraunces text-xl font-bold text-tinta group-hover:text-musgo transition-colors leading-tight mb-2">
+              Fundamentos de IA
+            </h3>
+            <p class="font-sans text-xs text-tinta/80 leading-relaxed mb-3">
+              Arquitectura de contexto, control de alucinaciones y calibración de prompts agronómicos.
+            </p>
+            
+            <div class="pt-2 border-t border-tinta/10 flex items-center justify-between font-mono text-[11px]">
+              <span class="text-tinta/60">3 MÓDULOS</span>
+              <span class="text-musgo font-bold group-hover:translate-x-1 transition-transform">VER PARCELA →</span>
+            </div>
+          </a>
+
+          <!-- Treatment 2: NotebookLM -->
+          <a 
+            href="#modulo-notebooklm" 
+            class="group block p-4 bg-papel border-2 border-tinta hover:border-musgo hover:shadow-field transition-all relative overflow-hidden animate-plot-2"
+          >
+            <div class="absolute top-0 right-0 bg-musgo text-papel font-mono text-[10px] font-bold px-2 py-0.5 border-b border-l border-tinta group-hover:bg-trigo group-hover:text-tierra transition-colors">
+              COORD [01,B]
+            </div>
+            
+            <div class="font-mono text-[11px] text-musgo font-bold tracking-wider mb-1">
+              TRATAMIENTO T2
+            </div>
+            <h3 class="font-fraunces text-xl font-bold text-tinta group-hover:text-musgo transition-colors leading-tight mb-2">
+              NotebookLM de Campo
+            </h3>
+            <p class="font-sans text-xs text-tinta/80 leading-relaxed mb-3">
+              Cuaderno inteligente conectado a literatura técnica, fichas de variedades y datos experimentales.
+            </p>
+            
+            <div class="pt-2 border-t border-tinta/10 flex items-center justify-between font-mono text-[11px]">
+              <span class="text-tinta/60">2 PROTOCOLOS</span>
+              <span class="text-musgo font-bold group-hover:translate-x-1 transition-transform">VER PARCELA →</span>
+            </div>
+          </a>
+
+          <!-- Treatment 3: Gemini & Gems -->
+          <a 
+            href="#modulo-gemini-gems" 
+            class="group block p-4 bg-papel border-2 border-tinta hover:border-musgo hover:shadow-field transition-all relative overflow-hidden animate-plot-3"
+          >
+            <div class="absolute top-0 right-0 bg-musgo text-papel font-mono text-[10px] font-bold px-2 py-0.5 border-b border-l border-tinta group-hover:bg-trigo group-hover:text-tierra transition-colors">
+              COORD [02,A]
+            </div>
+            
+            <div class="font-mono text-[11px] text-musgo font-bold tracking-wider mb-1">
+              TRATAMIENTO T3
+            </div>
+            <h3 class="font-fraunces text-xl font-bold text-tinta group-hover:text-musgo transition-colors leading-tight mb-2">
+              Gems Especializados
+            </h3>
+            <p class="font-sans text-xs text-tinta/80 leading-relaxed mb-3">
+              Creación de asistentes para muestreo de plagas, fertilización foliar y sanidad vegetal.
+            </p>
+            
+            <div class="pt-2 border-t border-tinta/10 flex items-center justify-between font-mono text-[11px]">
+              <span class="text-tinta/60">4 ASISTENTES</span>
+              <span class="text-musgo font-bold group-hover:translate-x-1 transition-transform">VER PARCELA →</span>
+            </div>
+          </a>
+
+          <!-- Treatment 4: Docs & Casos Prácticos -->
+          <a 
+            href="#modulo-docs-casos" 
+            class="group block p-4 bg-papel border-2 border-tinta hover:border-musgo hover:shadow-field transition-all relative overflow-hidden animate-plot-4"
+          >
+            <div class="absolute top-0 right-0 bg-musgo text-papel font-mono text-[10px] font-bold px-2 py-0.5 border-b border-l border-tinta group-hover:bg-trigo group-hover:text-tierra transition-colors">
+              COORD [02,B]
+            </div>
+            
+            <div class="font-mono text-[11px] text-musgo font-bold tracking-wider mb-1">
+              TRATAMIENTO T4
+            </div>
+            <h3 class="font-fraunces text-xl font-bold text-tinta group-hover:text-musgo transition-colors leading-tight mb-2">
+              Docs & Informes Técnicos
+            </h3>
+            <p class="font-sans text-xs text-tinta/80 leading-relaxed mb-3">
+              Flujo integrado de generación de reportes técnicos, análisis ANOVA y entrega de resultados.
+            </p>
+            
+            <div class="pt-2 border-t border-tinta/10 flex items-center justify-between font-mono text-[11px]">
+              <span class="text-tinta/60">1 REPORTE FINAL</span>
+              <span class="text-musgo font-bold group-hover:translate-x-1 transition-transform">VER PARCELA →</span>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Technical Field Legend -->
+        <div class="mt-4 pt-3 border-t border-tinta/20 flex flex-wrap items-center justify-between gap-2 font-mono text-[10px] text-tinta/70">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1"><span class="w-2 h-2 bg-musgo inline-block"></span> Bloque I (Teoría)</span>
+            <span class="flex items-center gap-1"><span class="w-2 h-2 bg-trigo inline-block"></span> Bloque II (Aplicación)</span>
+          </div>
+          <span class="text-tinta/50">ESCALA 1:1 // DATOS REALES</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

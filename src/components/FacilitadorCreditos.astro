@@ -1,0 +1,132 @@
+---
+// FacilitadorCreditos.astro - Sección de Créditos del Facilitador e Instituciones
+---
+
+<section id="facilitador" class="scroll-mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div class="border-2 border-tinta bg-niebla p-8 sm:p-12 shadow-field-lg relative overflow-hidden">
+    
+    <!-- Section Header Tag -->
+    <div class="flex flex-wrap items-center justify-between gap-3 border-b border-tinta/20 pb-4 mb-8">
+      <div class="flex items-center gap-2 font-mono text-xs text-tinta/80">
+        <span class="inline-block w-2.5 h-2.5 bg-musgo"></span>
+        <span class="font-bold text-tinta">CRÉDITOS ACADÉMICOS & INSTITUCIONALES</span>
+        <span class="text-tinta/40">|</span>
+        <span>ESTACIÓN EXPERIMENTAL USFX</span>
+      </div>
+      <span class="font-mono text-[11px] text-musgo font-semibold bg-papel px-2.5 py-1 border border-tinta/30">
+        TRANSFERENCIA CIENTÍFICA & DOCENCIA
+      </span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- Facilitator Profile Information -->
+      <div class="lg:col-span-6 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-papel border border-tinta text-xs font-mono">
+          <span class="text-trigo font-bold">★</span>
+          <span>SOBRE EL FACILITADOR</span>
+        </div>
+
+        <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold leading-tight">
+          Gerardo Burgos Castro
+        </h2>
+
+        <div class="font-mono text-xs sm:text-sm text-musgo font-bold space-y-1">
+          <p class="uppercase tracking-wider">Facilitador del taller</p>
+          <p class="text-tinta/90 font-medium">Instituto IASA — Facultad de Ciencias Agrarias</p>
+          <p class="text-tinta/70 font-normal">Universidad San Francisco Xavier de Chuquisaca (USFX)</p>
+        </div>
+
+        <p class="font-sans text-sm text-tinta/85 leading-relaxed pt-2">
+          Especialista en docencia universitaria, bioestadística y experimentación agrícola. Diseñador de metodologías de integración de Inteligencia Artificial Generativa aplicada al análisis de ensayos de campo (DBCA), síntesis sistemática de literatura agronómica y elaboración rigurosa de reportes científicos.
+        </p>
+
+        <div class="pt-4 flex flex-wrap items-center gap-4 font-mono text-xs">
+          <a 
+            href="#croquis-dbca" 
+            class="inline-flex items-center gap-2 px-4 py-2 bg-musgo text-papel border border-tinta font-bold hover:bg-tierra transition-all"
+          >
+            <span>↑</span> REVISAR PARCELAS (T1–T4)
+          </a>
+          <span class="text-tinta/60 text-[11px]">
+            SUCRE, BOLIVIA // 2026
+          </span>
+        </div>
+      </div>
+
+      <!-- Institutional Logos Strip (Dedicated light neutral background) -->
+      <div class="lg:col-span-6">
+        <div class="border-2 border-tinta bg-papel p-6 shadow-field space-y-4">
+          <div class="flex items-center justify-between font-mono text-xs text-tinta/70 border-b border-tinta/20 pb-2">
+            <span class="font-bold text-tinta">[AVAL INSTITUCIONAL]</span>
+            <span>3 ENTIDADES DE INVESTIGACIÓN</span>
+          </div>
+
+          <p class="font-sans text-xs text-tinta/75">
+            Iniciativa académica desarrollada en el marco de la investigación y fortalecimiento de capacidades computacionales agropecuarias:
+          </p>
+
+          <!-- NEUTRAL LIGHT STRIP FOR FULL COLOR/INSTITUTIONAL LOGOS -->
+          <div class="bg-white/95 border border-tinta/30 rounded-none p-5 shadow-sm">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-center justify-items-center">
+              
+              <!-- LOGO 1: USFX -->
+              <div class="flex flex-col items-center text-center group h-full justify-center">
+                <div class="w-16 h-16 flex items-center justify-center p-1.5 border border-tinta/15 bg-white shadow-2xs mb-2">
+                  <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" stroke="#8B1E2D" stroke-width="4" fill="#FDFBF7"/>
+                    <circle cx="50" cy="50" r="38" stroke="#C9A227" stroke-width="2"/>
+                    <path d="M50 18 L50 82 M26 38 L74 38 M32 62 L68 62" stroke="#8B1E2D" stroke-width="4" stroke-linecap="square"/>
+                    <circle cx="50" cy="50" r="10" fill="#8B1E2D"/>
+                    <polygon points="50,22 53,28 47,28" fill="#C9A227"/>
+                    <text x="50" y="93" text-anchor="middle" font-family="'Fraunces', serif" font-size="8" font-weight="bold" fill="#8B1E2D">1624</text>
+                  </svg>
+                </div>
+                <span class="font-mono font-bold text-xs text-[#8B1E2D]">USFX</span>
+                <span class="font-sans text-[10px] text-tinta/70 leading-tight">Univ. San Francisco Xavier</span>
+              </div>
+
+              <!-- LOGO 2: INSTITUTO IASA -->
+              <div class="flex flex-col items-center text-center group h-full justify-center border-t sm:border-t-0 sm:border-l border-tinta/15 pt-4 sm:pt-0 sm:pl-4">
+                <div class="w-16 h-16 flex items-center justify-center p-1.5 border border-tinta/15 bg-white shadow-2xs mb-2">
+                  <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8" y="8" width="84" height="84" stroke="#46573C" stroke-width="4" fill="#F7F9F6"/>
+                    <path d="M50 20 C35 35 35 65 50 80 C65 65 65 35 50 20 Z" fill="#46573C"/>
+                    <path d="M50 25 L50 75 M40 45 L50 35 L60 45 M38 60 L50 50 L62 60" stroke="#C9A227" stroke-width="2.5" stroke-linecap="round"/>
+                    <circle cx="50" cy="50" r="3" fill="#E8E4D6"/>
+                  </svg>
+                </div>
+                <span class="font-mono font-bold text-xs text-musgo">INSTITUTO IASA</span>
+                <span class="font-sans text-[10px] text-tinta/70 leading-tight">Investigaciones Agrícolas</span>
+              </div>
+
+              <!-- LOGO 3: FACULTAD DE CIENCIAS AGRARIAS -->
+              <div class="flex flex-col items-center text-center group h-full justify-center border-t sm:border-t-0 sm:border-l border-tinta/15 pt-4 sm:pt-0 sm:pl-4">
+                <div class="w-16 h-16 flex items-center justify-center p-1.5 border border-tinta/15 bg-white shadow-2xs mb-2">
+                  <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="50,10 88,32 88,76 50,94 12,76 12,32" stroke="#2B2418" stroke-width="3" fill="#FAF8F5"/>
+                    <path d="M50 30 L50 70 M30 50 L70 50" stroke="#C9A227" stroke-width="3"/>
+                    <circle cx="50" cy="30" r="5" fill="#46573C"/>
+                    <circle cx="50" cy="70" r="5" fill="#46573C"/>
+                    <circle cx="30" cy="50" r="5" fill="#46573C"/>
+                    <circle cx="70" cy="50" r="5" fill="#46573C"/>
+                    <circle cx="50" cy="50" r="4" fill="#8B1E2D"/>
+                  </svg>
+                </div>
+                <span class="font-mono font-bold text-xs text-tierra">FAC. CIENCIAS AGRARIAS</span>
+                <span class="font-sans text-[10px] text-tinta/70 leading-tight">Facultad de Agronomía</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="text-[10px] font-mono text-tinta/60 flex items-center justify-between pt-1">
+            <span>SUITE EXPERIMENTAL: NOTEBOOKLM & GEMINI</span>
+            <span class="text-trigo font-bold">EDICIÓN 2026</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
