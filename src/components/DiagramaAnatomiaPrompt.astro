@@ -1,0 +1,171 @@
+---
+// DiagramaAnatomiaPrompt.astro - Esquema visual de la Estructura de un Prompt Académico según el modelo de 4 componentes mínimos
+---
+
+<div class="my-6 border-2 border-tinta bg-papel p-5 sm:p-8 shadow-field space-y-6">
+  <!-- Header Title matching the reference document -->
+  <div class="text-center space-y-1.5 border-b border-tinta/20 pb-4">
+    <h3 class="font-fraunces text-2xl sm:text-3xl text-tinta font-bold tracking-tight uppercase">
+      Estructura de un Prompt Académico
+    </h3>
+    <div class="w-16 h-0.5 bg-musgo mx-auto my-1"></div>
+    <p class="font-sans italic text-xs sm:text-sm text-tinta/80">
+      La fórmula del Prompt Académico: 4 componentes mínimos
+    </p>
+  </div>
+
+  <!-- SVG Diagram of the 4 Components with Converging Architecture -->
+  <div class="w-full overflow-x-auto">
+    <svg 
+      class="w-full h-auto min-w-[760px] max-w-5xl mx-auto" 
+      viewBox="0 0 920 480" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="Diagrama: Estructura de un Prompt Académico en 4 componentes mínimos que convergen en el Prompt Académico Completo"
+    >
+      <!-- Subtle Paper Background -->
+      <rect width="920" height="480" fill="#E8E4D6" rx="4"/>
+
+      <!-- ================= 4 TOP BOXES ================= -->
+
+      <!-- BOX 1: ROL -->
+      <g transform="translate(20, 20)">
+        <rect x="0" y="0" width="195" height="175" rx="4" fill="#DCE3D9" stroke="#1F2318" stroke-width="1.8"/>
+        <!-- Box Title & Underline -->
+        <text x="97.5" y="32" fill="#1F2318" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="bold" text-anchor="middle">1. ROL</text>
+        <line x1="25" y1="42" x2="170" y2="42" stroke="#1F2318" stroke-width="1"/>
+        <!-- Box Content -->
+        <text x="18" y="70" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="11.5" font-weight="normal">
+          <tspan x="18" dy="0">Define la perspectiva</tspan>
+          <tspan x="18" dy="18">y el nivel de</tspan>
+          <tspan x="18" dy="18">exigencia.</tspan>
+          <tspan x="18" dy="24" fill="#46573C" font-family="'IBM Plex Mono', monospace" font-size="10.5">Ej. revisor de</tspan>
+          <tspan x="18" dy="16" fill="#46573C" font-family="'IBM Plex Mono', monospace" font-size="10.5">pares, asesor</tspan>
+          <tspan x="18" dy="16" fill="#46573C" font-family="'IBM Plex Mono', monospace" font-size="10.5">metodológico.</tspan>
+        </text>
+      </g>
+
+      <!-- Arrow 1 -> 2 -->
+      <g transform="translate(215, 107)">
+        <line x1="0" y1="0" x2="25" y2="0" stroke="#1F2318" stroke-width="1.8"/>
+        <polygon points="28,0 20,-4 20,4" fill="#1F2318"/>
+      </g>
+
+      <!-- BOX 2: CONTEXTO / DATOS -->
+      <g transform="translate(245, 20)">
+        <rect x="0" y="0" width="195" height="175" rx="4" fill="#DCE3D9" stroke="#1F2318" stroke-width="1.8"/>
+        <!-- Box Title & Underline -->
+        <text x="97.5" y="32" fill="#1F2318" font-family="'IBM Plex Mono', monospace" font-size="12.5" font-weight="bold" text-anchor="middle">2. CONTEXTO / DATOS</text>
+        <line x1="20" y1="42" x2="175" y2="42" stroke="#1F2318" stroke-width="1"/>
+        <!-- Box Content -->
+        <text x="18" y="70" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="11.5" font-weight="normal">
+          <tspan x="18" dy="0">Insumos reales</tspan>
+          <tspan x="18" dy="18">verificables.</tspan>
+          <tspan x="18" dy="24" fill="#2B2418" font-weight="bold">Nunca pedir al</tspan>
+          <tspan x="18" dy="18" fill="#2B2418" font-weight="bold">modelo que invente</tspan>
+          <tspan x="18" dy="18" fill="#2B2418" font-weight="bold">cifras o fuentes.</tspan>
+        </text>
+      </g>
+
+      <!-- Arrow 2 -> 3 -->
+      <g transform="translate(440, 107)">
+        <line x1="0" y1="0" x2="25" y2="0" stroke="#1F2318" stroke-width="1.8"/>
+        <polygon points="28,0 20,-4 20,4" fill="#1F2318"/>
+      </g>
+
+      <!-- BOX 3: TAREA Y RESTRICCIONES -->
+      <g transform="translate(470, 20)">
+        <rect x="0" y="0" width="205" height="175" rx="4" fill="#DCE3D9" stroke="#1F2318" stroke-width="1.8"/>
+        <!-- Box Title & Underline -->
+        <text x="102.5" y="27" fill="#1F2318" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" text-anchor="middle">3. TAREA Y</text>
+        <text x="102.5" y="41" fill="#1F2318" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" text-anchor="middle">RESTRICCIONES</text>
+        <line x1="20" y1="48" x2="185" y2="48" stroke="#1F2318" stroke-width="1"/>
+        <!-- Box Content -->
+        <text x="18" y="74" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="11.5" font-weight="normal">
+          <tspan x="18" dy="0">Qué debe hacer y qué</tspan>
+          <tspan x="18" dy="18">está estrictamente</tspan>
+          <tspan x="18" dy="18">prohibido.</tspan>
+          <tspan x="18" dy="24" fill="#46573C" font-family="'IBM Plex Mono', monospace" font-size="10.5">Ej. sin adjetivos</tspan>
+          <tspan x="18" dy="16" fill="#46573C" font-family="'IBM Plex Mono', monospace" font-size="10.5">subjetivos.</tspan>
+        </text>
+      </g>
+
+      <!-- Arrow 3 -> 4 -->
+      <g transform="translate(675, 107)">
+        <line x1="0" y1="0" x2="25" y2="0" stroke="#1F2318" stroke-width="1.8"/>
+        <polygon points="28,0 20,-4 20,4" fill="#1F2318"/>
+      </g>
+
+      <!-- BOX 4: ESTRUCTURA DE SALIDA -->
+      <g transform="translate(705, 20)">
+        <rect x="0" y="0" width="195" height="175" rx="4" fill="#DCE3D9" stroke="#1F2318" stroke-width="1.8"/>
+        <!-- Box Title & Underline -->
+        <text x="97.5" y="27" fill="#1F2318" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" text-anchor="middle">4. ESTRUCTURA</text>
+        <text x="97.5" y="41" fill="#1F2318" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" text-anchor="middle">DE SALIDA</text>
+        <line x1="20" y1="48" x2="175" y2="48" stroke="#1F2318" stroke-width="1"/>
+        <!-- Box Content -->
+        <text x="18" y="74" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="11.5" font-weight="normal">
+          <tspan x="18" dy="0">Longitud exacta y</tspan>
+          <tspan x="18" dy="18">organización por</tspan>
+          <tspan x="18" dy="18">secciones.</tspan>
+        </text>
+      </g>
+
+      <!-- ================= CONVERGING BRACKET LINES ================= -->
+      <!-- Vertical lines coming down from each box center -->
+      <line x1="117.5" y1="195" x2="117.5" y2="235" stroke="#1F2318" stroke-width="1.5"/>
+      <line x1="342.5" y1="195" x2="342.5" y2="235" stroke="#1F2318" stroke-width="1.5"/>
+      <line x1="572.5" y1="195" x2="572.5" y2="235" stroke="#1F2318" stroke-width="1.5"/>
+      <line x1="802.5" y1="195" x2="802.5" y2="235" stroke="#1F2318" stroke-width="1.5"/>
+
+      <!-- Horizontal connecting bar -->
+      <line x1="117.5" y1="235" x2="802.5" y2="235" stroke="#1F2318" stroke-width="1.5"/>
+
+      <!-- Central downward arrow -->
+      <line x1="460" y1="235" x2="460" y2="265" stroke="#1F2318" stroke-width="2"/>
+      <polygon points="460,272 455,263 465,263" fill="#1F2318"/>
+
+      <!-- ================= GOLDEN CENTRAL BOX: PROMPT ACADÉMICO COMPLETO ================= -->
+      <g transform="translate(250, 275)">
+        <!-- Gold background container with double border aesthetic -->
+        <rect x="0" y="0" width="420" height="74" rx="4" fill="#C9A227" fill-opacity="0.38" stroke="#1F2318" stroke-width="2"/>
+        <rect x="3" y="3" width="414" height="68" rx="2" fill="none" stroke="#C9A227" stroke-width="1"/>
+        
+        <!-- Title & Underline -->
+        <text x="210" y="27" fill="#1F2318" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="bold" text-anchor="middle" letter-spacing="1.5">PROMPT ACADÉMICO COMPLETO</text>
+        <line x1="85" y1="34" x2="335" y2="34" stroke="#1F2318" stroke-width="1"/>
+        
+        <!-- Subtitle text -->
+        <text x="210" y="52" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="11" font-weight="500" text-anchor="middle">
+          <tspan x="210" dy="0">Respuesta rigurosa, verificable y estructurada</tspan>
+          <tspan x="210" dy="15">según los cuatro componentes.</tspan>
+        </text>
+      </g>
+
+      <!-- ================= REGLAS CONCRETAS SECTION ================= -->
+      <g transform="translate(20, 370)">
+        <!-- Rounded outer box with centered header tag -->
+        <rect x="0" y="0" width="880" height="95" rx="8" fill="#FAF8F3" stroke="#1F2318" stroke-width="1.5"/>
+        
+        <!-- Header Text cut into top border line aesthetic -->
+        <rect x="375" y="-10" width="130" height="20" fill="#E8E4D6"/>
+        <text x="440" y="5" fill="#1F2318" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" text-anchor="middle" letter-spacing="1">REGLAS CONCRETAS</text>
+
+        <!-- Column 1 Bullets -->
+        <text x="25" y="35" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="11.5">
+          <tspan x="25" dy="0">• No pedir datos, cifras ni fuentes inventadas.</tspan>
+          <tspan x="25" dy="22">• Ser específico en la tarea y en las restricciones.</tspan>
+          <tspan x="25" dy="22">• Definir la estructura de salida con claridad.</tspan>
+        </text>
+
+        <!-- Column 2 Bullets -->
+        <text x="470" y="35" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="11.5">
+          <tspan x="470" dy="0">• Indicar el nivel académico y el público objetivo.</tspan>
+          <tspan x="470" dy="22">• Evitar ambigüedades y generalidades.</tspan>
+          <tspan x="470" dy="22">• Revisar y ajustar antes de enviar el prompt.</tspan>
+        </text>
+      </g>
+    </svg>
+  </div>
+</div>

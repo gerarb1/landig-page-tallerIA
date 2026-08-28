@@ -1,0 +1,121 @@
+---
+// VideoTutorial.astro - Componente responsivo para videos tutoriales de YouTube con iframe seguro
+interface StepLink {
+  stepNumber: number;
+  text: string;
+  linkText: string;
+  url: string;
+}
+
+interface Props {
+  videoId: string;
+  title: string;
+  toolName?: string;
+  toolUrl?: string;
+  steps?: StepLink[];
+}
+
+const {
+  videoId = "dQw4w9WgXcQ",
+  title = "Tutorial paso a paso",
+  toolName = "",
+  toolUrl = "",
+  steps = [],
+} = Astro.props;
+---
+
+<div class="my-6 border-2 border-tinta bg-niebla p-4 sm:p-6 shadow-field space-y-5">
+  <!-- Video Section Header -->
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-tinta/20 pb-3">
+    <div class="flex items-center gap-2">
+      <span class="w-2.5 h-2.5 bg-musgo inline-block"></span>
+      <h3 class="font-fraunces text-lg sm:text-xl font-bold text-tinta">
+        {title}
+      </h3>
+    </div>
+    {toolName && toolUrl && (
+      <a 
+        href={toolUrl}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-1.5 font-mono text-xs text-papel bg-musgo hover:bg-tierra font-bold px-3 py-1 border border-tinta shadow-2xs transition-colors"
+      >
+        <span>Herramienta: {toolName}</span>
+        <span class="text-trigo font-bold">↗</span>
+      </a>
+    )}
+  </div>
+
+  <!-- Responsive 16:9 YouTube Video Container with 0.5px musgo border & rx=4 -->
+  <div class="relative w-full aspect-video rounded-[4px] overflow-hidden bg-tinta shadow-xs border-[0.5px] border-musgo">
+    <iframe
+      class="w-full h-full rounded-[4px]"
+      style="border: 0.5px solid #46573C;"
+      src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0`}
+      title={title}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+  </div>
+
+  <!-- Below Video Actions & YouTube Link -->
+  <div class="flex flex-wrap items-center justify-between gap-3 pt-1 font-mono text-xs border-b border-tinta/15 pb-4">
+    {toolUrl ? (
+      <a 
+        href={toolUrl}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-1.5 text-tinta/80 hover:text-musgo font-semibold transition-colors"
+      >
+        <span class="text-musgo font-bold">▶</span>
+        <span>Abrir <strong class="underline decoration-musgo underline-offset-2">{toolName}</strong> ({toolUrl.replace(/^https?:\/\//, '')})</span>
+        <span class="text-trigo font-bold text-[11px]">↗</span>
+      </a>
+    ) : (
+      <span class="text-tinta/60 text-[11px]">REPRODUCCIÓN SEGURA // YOUTUBE NO-COOKIE</span>
+    )}
+
+    <!-- Direct YouTube Link in IBM Plex Mono -->
+    <a 
+      href={`https://youtu.be/${videoId}`}
+      target="_blank"
+      rel="noopener"
+      class="inline-flex items-center gap-1 text-musgo hover:text-tierra font-mono text-xs font-bold transition-colors ml-auto bg-papel px-2.5 py-1 border border-tinta/25"
+    >
+      <span>Ver en YouTube</span>
+      <span class="text-[13px] text-musgo">↗</span>
+    </a>
+  </div>
+
+  <!-- Step-by-Step Tool Links Index (if steps provided) -->
+  {steps.length > 0 && (
+    <div class="space-y-3 pt-1">
+      <div class="font-mono text-xs font-bold text-musgo flex items-center gap-2">
+        <span class="w-1.5 h-1.5 bg-musgo inline-block"></span>
+        <span>// PASOS DEL TUTORIAL CON ENLACES A LA HERRAMIENTA:</span>
+      </div>
+      <ol class="space-y-2 font-sans text-xs sm:text-sm text-tinta/90">
+        {steps.map((step) => (
+          <li class="flex items-start gap-2.5 bg-papel/70 p-2.5 border border-tinta/15">
+            <span class="font-mono text-xs font-bold text-papel bg-musgo w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              {step.stepNumber}
+            </span>
+            <div class="grow leading-relaxed">
+              <span>{step.text} </span>
+              <a 
+                href={step.url} 
+                target="_blank" 
+                rel="noopener"
+                class="inline-flex items-center gap-0.5 font-mono text-xs text-musgo font-bold underline hover:text-tierra bg-niebla/80 px-1.5 py-0.5 border border-musgo/30 ml-1"
+              >
+                <span>{step.linkText}</span>
+                <span class="text-[10px]">↗</span>
+              </a>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  )}
+</div>

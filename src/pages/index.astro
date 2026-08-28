@@ -3,6 +3,34 @@ import Layout from '../layouts/Layout.astro';
 import HeroDBCA from '../components/HeroDBCA.astro';
 import PromptInspector from '../components/PromptInspector.astro';
 import FacilitadorCreditos from '../components/FacilitadorCreditos.astro';
+import VideoTutorial from '../components/VideoTutorial.astro';
+import DiagramaAnatomiaPrompt from '../components/DiagramaAnatomiaPrompt.astro';
+import DiagramaFlujoConectado from '../components/DiagramaFlujoConectado.astro';
+
+// Steps data with direct tool links for each parcel
+const stepsNotebookLM = [
+  { stepNumber: 1, text: "Inicia sesión con tu cuenta de Google en", linkText: "notebooklm.google.com", url: "https://notebooklm.google.com/" },
+  { stepNumber: 2, text: 'Crea un nuevo cuaderno haciendo clic en "+ Nuevo notebook" dentro de', linkText: "NotebookLM", url: "https://notebooklm.google.com/" },
+  { stepNumber: 3, text: "Arrastra y sube tus PDFs y papers técnicos al panel de fuentes en", linkText: "NotebookLM", url: "https://notebooklm.google.com/" },
+  { stepNumber: 4, text: "Pega el prompt de análisis agronómico directamente en el chat de", linkText: "NotebookLM", url: "https://notebooklm.google.com/" },
+  { stepNumber: 5, text: "Verifica las citas ancladas y notas al pie dentro de", linkText: "NotebookLM", url: "https://notebooklm.google.com/" },
+];
+
+const stepsGemini = [
+  { stepNumber: 1, text: "Accede e inicia sesión con tu cuenta en", linkText: "gemini.google.com", url: "https://gemini.google.com/" },
+  { stepNumber: 2, text: 'En el panel lateral izquierdo, ve a "Explorar Gems" y selecciona "+ Nuevo Gem" en', linkText: "Gemini Gems", url: "https://gemini.google.com/" },
+  { stepNumber: 3, text: "Configura el rol y las reglas pegando el bloque de instrucciones en", linkText: "Gemini", url: "https://gemini.google.com/" },
+  { stepNumber: 4, text: 'Nombra tu asistente como "AgroData Quality Auditor" y guárdalo en', linkText: "Gemini", url: "https://gemini.google.com/" },
+  { stepNumber: 5, text: "Prueba tu Gem con registros reales de campo directamente en", linkText: "gemini.google.com", url: "https://gemini.google.com/" },
+];
+
+const stepsDocs = [
+  { stepNumber: 1, text: "Crea un documento en blanco al instante ingresando a", linkText: "docs.new", url: "https://docs.new" },
+  { stepNumber: 2, text: "Pega los fragmentos y análisis obtenidos previamente en tu archivo de", linkText: "Google Docs", url: "https://docs.google.com/" },
+  { stepNumber: 3, text: "Abre el panel lateral integrado de Gemini dentro de", linkText: "Google Docs", url: "https://docs.google.com/" },
+  { stepNumber: 4, text: "Ejecuta el prompt de redacción técnica PROT-04 en el panel de", linkText: "Docs Gemini", url: "https://docs.google.com/" },
+  { stepNumber: 5, text: "Revisa y ajusta la discusión del informe técnico final en", linkText: "Google Docs", url: "https://docs.google.com/" },
+];
 ---
 
 <Layout title="Taller DBCA: Inteligencia Artificial en Ciencias Agropecuarias — Gerardo Burgos Castro (USFX)">
@@ -13,8 +41,8 @@ import FacilitadorCreditos from '../components/FacilitadorCreditos.astro';
   <!-- Divider Metric Ruler -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="border-t-2 border-dashed border-tinta/30 relative my-6">
-      <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-papel px-4 font-mono text-xs text-tinta/70 border border-tinta/20">
-        SECCIÓN METODOLÓGICA // TRATAMIENTOS DE CAMPO
+      <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-papel px-4 font-mono text-xs text-tinta/70 border border-tinta/20 text-center">
+        SECCIÓN METODOLÓGICA // TRATAMIENTOS DE CAMPO (T1–T4)
       </span>
     </div>
   </div>
@@ -23,8 +51,9 @@ import FacilitadorCreditos from '../components/FacilitadorCreditos.astro';
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
     
     <!-- TRATAMIENTO 1: FUNDAMENTOS -->
-    <div id="modulo-fundamentos" class="scroll-mt-20 border-2 border-tinta bg-niebla p-6 sm:p-8 shadow-field">
-      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4 mb-6">
+    <div id="modulo-fundamentos" class="scroll-mt-20 border-2 border-tinta bg-niebla p-6 sm:p-8 shadow-field space-y-8">
+      <!-- Parcel Header -->
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4">
         <div class="flex items-center gap-3">
           <span class="px-2.5 py-1 bg-musgo text-papel font-mono text-xs font-bold border border-tinta">
             TRATAMIENTO T1
@@ -34,8 +63,9 @@ import FacilitadorCreditos from '../components/FacilitadorCreditos.astro';
         <span class="font-mono text-xs text-trigo font-bold bg-tierra px-2.5 py-0.5">DURACIÓN: 2 HORAS</span>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <div class="lg:col-span-5 space-y-4">
+      <!-- Theory & Anatomy Layout -->
+      <div class="space-y-6">
+        <div class="space-y-4 max-w-4xl">
           <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold">
             Fundamentos & Arquitectura de Contexto
           </h2>
@@ -45,7 +75,7 @@ import FacilitadorCreditos from '../components/FacilitadorCreditos.astro';
           <ul class="space-y-2 text-xs font-mono text-tinta/90 pt-2">
             <li class="flex items-start gap-2">
               <span class="text-musgo font-bold">▶</span>
-              <span>Anatomía de un prompt agronómico estructurado</span>
+              <span class="font-semibold text-tinta">Anatomía de un prompt agronómico estructurado</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-musgo font-bold">▶</span>
@@ -58,7 +88,11 @@ import FacilitadorCreditos from '../components/FacilitadorCreditos.astro';
           </ul>
         </div>
 
-        <div class="lg:col-span-7">
+        <!-- Visual Diagram: Anatomía de un Prompt Agronómico -->
+        <DiagramaAnatomiaPrompt />
+
+        <!-- Literal Prompt Inspector for T1 -->
+        <div class="pt-2">
           <PromptInspector 
             protocolId="PROT-01"
             title="Framing Experimental & Calibración de Rol"
@@ -76,12 +110,26 @@ import FacilitadorCreditos from '../components/FacilitadorCreditos.astro';
    - Protocolo de muestreo foliar sugerido`}
           />
         </div>
+
+        <!-- Closing Connection Block before T2 -->
+        <div class="mt-8 pt-6 border-t-2 border-tinta/20 bg-papel p-5 sm:p-6 border border-tinta space-y-4">
+          <div class="flex items-center gap-2 font-mono text-xs font-bold text-musgo">
+            <span>// CÓMO SE CONECTA TODO</span>
+          </div>
+          <p class="font-sans text-sm sm:text-base text-tinta/90 leading-relaxed">
+            Cada parcela que sigue no es una herramienta aislada — es un paso del mismo flujo. Lo que extraes en NotebookLM (T2) alimenta los Gems que configuras en T3, y todo converge en el documento final de T4. Recorre las parcelas en orden la primera vez.
+          </p>
+          
+          <!-- Visual Roadmap Diagram: Flujo Conectado -->
+          <DiagramaFlujoConectado />
+        </div>
       </div>
     </div>
 
     <!-- TRATAMIENTO 2: NOTEBOOKLM -->
-    <div id="modulo-notebooklm" class="scroll-mt-20 border-2 border-tinta bg-papel p-6 sm:p-8 shadow-field">
-      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4 mb-6">
+    <div id="modulo-notebooklm" class="scroll-mt-20 border-2 border-tinta bg-papel p-6 sm:p-8 shadow-field space-y-8">
+      <!-- Parcel Header -->
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4">
         <div class="flex items-center gap-3">
           <span class="px-2.5 py-1 bg-musgo text-papel font-mono text-xs font-bold border border-tinta">
             TRATAMIENTO T2
@@ -91,38 +139,48 @@ import FacilitadorCreditos from '../components/FacilitadorCreditos.astro';
         <span class="font-mono text-xs text-trigo font-bold bg-tierra px-2.5 py-0.5">DURACIÓN: 2 HORAS</span>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <div class="lg:col-span-5 space-y-4">
-          <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold">
-            NotebookLM como Cuaderno de Campo Inteligente
-          </h2>
-          <p class="font-sans text-sm sm:text-base text-tinta/85 leading-relaxed">
-            Convierte cientos de PDFs de literatura técnica, fichas de registro de cultivares y manuales de plagas en una base de conocimiento fundamentada que cita fuentes exactas con cada respuesta.
-          </p>
-          <ul class="space-y-2 text-xs font-mono text-tinta/90 pt-2">
-            <li class="flex items-start gap-2">
-              <span class="text-musgo font-bold">▶</span>
-              <span>Carga estructurada de fuentes científicas y manuales ICA/SAG/INIFAP</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-musgo font-bold">▶</span>
-              <span>Generación de guías de campo y preguntas frecuentes automáticas</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-musgo font-bold">▶</span>
-              <span>Extracción de tablas comparativas de tolerancia a plagas</span>
-            </li>
-          </ul>
-        </div>
+      <!-- Theory Section -->
+      <div class="space-y-4 max-w-4xl">
+        <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold">
+          NotebookLM como Cuaderno de Campo Inteligente
+        </h2>
+        <p class="font-sans text-sm sm:text-base text-tinta/85 leading-relaxed">
+          Convierte cientos de PDFs de literatura técnica, fichas de registro de cultivares y manuales de plagas en una base de conocimiento fundamentada que cita fuentes exactas con cada respuesta.
+        </p>
+        <ul class="space-y-2 text-xs font-mono text-tinta/90 pt-1">
+          <li class="flex items-start gap-2">
+            <span class="text-musgo font-bold">▶</span>
+            <span>Carga estructurada de fuentes científicas y manuales ICA/SAG/INIFAP</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-musgo font-bold">▶</span>
+            <span>Generación de guías de campo y preguntas frecuentes automáticas</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-musgo font-bold">▶</span>
+            <span>Extracción de tablas comparativas de tolerancia a plagas</span>
+          </li>
+        </ul>
+      </div>
 
-        <div class="lg:col-span-7">
-          <PromptInspector 
-            protocolId="PROT-02"
-            title="Síntesis de Literatura & Fichas de Variedades"
-            role="Curador de Información Técnica Agronómica"
-            inputData="Corpus de 12 papers sobre resistencia a roya y sequía"
-            outputFormat="Matriz comparativa Markdown con citas directas al párrafo de origen"
-            promptText={`[INSTRUCCIÓN EN NOTEBOOKLM]:
+      <!-- Video Tutorial Component replacing static step cards -->
+      <VideoTutorial 
+        videoId="dQw4w9WgXcQ"
+        title="Tutorial: NotebookLM paso a paso"
+        toolName="NotebookLM"
+        toolUrl="https://notebooklm.google.com/"
+        steps={stepsNotebookLM}
+      />
+
+      <!-- Literal Prompt (PROT-02) goes AFTER the tutorial -->
+      <div class="border-t border-tinta/20 pt-6">
+        <PromptInspector 
+          protocolId="PROT-02"
+          title="Síntesis de Literatura & Fichas de Variedades"
+          role="Curador de Información Técnica Agronómica"
+          inputData="Corpus de 12 papers sobre resistencia a roya y sequía"
+          outputFormat="Matriz comparativa Markdown con citas directas al párrafo de origen"
+          promptText={`[INSTRUCCIÓN EN NOTEBOOKLM]:
 A partir de las fuentes cargadas correspondientes a los ensayos de rendimiento 2024-2025:
 
 1. Elabora una tabla con las siguientes columnas:
@@ -132,14 +190,29 @@ A partir de las fuentes cargadas correspondientes a los ensayos de rendimiento 2
    - Días a floración
 2. Cita la fuente exacta (documento y página) para cada cifra.
 3. Identifica si existen contradicciones entre las localidades evaluadas.`}
-          />
-        </div>
+        />
+      </div>
+
+      <!-- Parcel Closing Direct Action Link Button -->
+      <div class="pt-4 border-t border-tinta/20 flex flex-wrap items-center justify-between gap-4">
+        <span class="font-mono text-xs text-tinta/70">
+          HERRAMIENTA EXPERIMENTAL // GOOGLE NOTEBOOKLM
+        </span>
+        <a 
+          href="https://notebooklm.google.com/" 
+          target="_blank" 
+          rel="noopener"
+          class="inline-flex items-center justify-center px-6 py-3.5 bg-musgo text-papel font-mono text-xs font-bold tracking-wider uppercase border-2 border-tinta shadow-field hover:shadow-field-hover hover:bg-tierra transition-all"
+        >
+          Abrir NotebookLM →
+        </a>
       </div>
     </div>
 
     <!-- TRATAMIENTO 3: GEMINI & GEMS -->
-    <div id="modulo-gemini-gems" class="scroll-mt-20 border-2 border-tinta bg-niebla p-6 sm:p-8 shadow-field">
-      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4 mb-6">
+    <div id="modulo-gemini-gems" class="scroll-mt-20 border-2 border-tinta bg-niebla p-6 sm:p-8 shadow-field space-y-8">
+      <!-- Parcel Header -->
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4">
         <div class="flex items-center gap-3">
           <span class="px-2.5 py-1 bg-musgo text-papel font-mono text-xs font-bold border border-tinta">
             TRATAMIENTO T3
@@ -149,38 +222,48 @@ A partir de las fuentes cargadas correspondientes a los ensayos de rendimiento 2
         <span class="font-mono text-xs text-trigo font-bold bg-tierra px-2.5 py-0.5">DURACIÓN: 2.5 HORAS</span>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <div class="lg:col-span-5 space-y-4">
-          <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold">
-            Gemini & Gems Especializados
-          </h2>
-          <p class="font-sans text-sm sm:text-base text-tinta/85 leading-relaxed">
-            Diseña y entrena tus propios "Gems" (asistentes personalizados con instrucciones permanentes) para tareas recurrentes de campo: cálculo de dosis de pulverización, muestreo secuencial y diagnóstico fotográfico asistido.
-          </p>
-          <ul class="space-y-2 text-xs font-mono text-tinta/90 pt-2">
-            <li class="flex items-start gap-2">
-              <span class="text-musgo font-bold">▶</span>
-              <span>Creación de Gem para calibración de pulverizadoras y boquillas</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-musgo font-bold">▶</span>
-              <span>Gem auditor de datos de campo y detección de outliers</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-musgo font-bold">▶</span>
-              <span>Análisis multimodal: interpretación de imágenes de hojas sintomáticas</span>
-            </li>
-          </ul>
-        </div>
+      <!-- Theory Section -->
+      <div class="space-y-4 max-w-4xl">
+        <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold">
+          Gemini & Gems Especializados
+        </h2>
+        <p class="font-sans text-sm sm:text-base text-tinta/85 leading-relaxed">
+          Diseña y entrena tus propios "Gems" (asistentes personalizados con instrucciones permanentes) para tareas recurrentes de campo: cálculo de dosis de pulverización, muestreo secuencial y diagnóstico fotográfico asistido.
+        </p>
+        <ul class="space-y-2 text-xs font-mono text-tinta/90 pt-1">
+          <li class="flex items-start gap-2">
+            <span class="text-musgo font-bold">▶</span>
+            <span>Creación de Gem para calibración de pulverizadoras y boquillas</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-musgo font-bold">▶</span>
+            <span>Gem auditor de datos de campo y detección de outliers</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-musgo font-bold">▶</span>
+            <span>Análisis multimodal: interpretación de imágenes de hojas sintomáticas</span>
+          </li>
+        </ul>
+      </div>
 
-        <div class="lg:col-span-7">
-          <PromptInspector 
-            protocolId="PROT-03"
-            title="Definición del System Prompt del Gem"
-            role="Auditor de Calidad de Datos Agrícolas & Calibración"
-            inputData="Registros brutos de pesaje de parcelas y recuento de espigas"
-            outputFormat="Reporte de consistencia y alertas de posibles errores de transcripción"
-            promptText={`[CONFIGURACIÓN DEL GEM]: "AgroData Quality Auditor"
+      <!-- Video Tutorial Component replacing static step cards -->
+      <VideoTutorial 
+        videoId="dQw4w9WgXcQ"
+        title="Tutorial: Creación de Gems en Gemini paso a paso"
+        toolName="Google Gemini"
+        toolUrl="https://gemini.google.com/"
+        steps={stepsGemini}
+      />
+
+      <!-- Literal Prompt (PROT-03) goes AFTER the tutorial -->
+      <div class="border-t border-tinta/20 pt-6">
+        <PromptInspector 
+          protocolId="PROT-03"
+          title="Definición del System Prompt del Gem"
+          role="Auditor de Calidad de Datos Agrícolas & Calibración"
+          inputData="Registros brutos de pesaje de parcelas y recuento de espigas"
+          outputFormat="Reporte de consistencia y alertas de posibles errores de transcripción"
+          promptText={`[CONFIGURACIÓN DEL GEM]: "AgroData Quality Auditor"
 
 [ROL]: Eres un auditor estadístico especializado en ensayos DBCA. Tu función es verificar la integridad de los datos levantados en campo antes de correr análisis en R o Python.
 
@@ -188,14 +271,29 @@ A partir de las fuentes cargadas correspondientes a los ensayos de rendimiento 2
 - Verifica si los valores de rendimiento se encuentran dentro del rango biológico admisible (CV esperado < 15%).
 - Señala si hay parcelas perdidas o valores extremos (> 2.5 desviaciones estándar).
 - Genera el código R preliminar para visualización de boxplots por bloque.`}
-          />
-        </div>
+        />
+      </div>
+
+      <!-- Parcel Closing Direct Action Link Button -->
+      <div class="pt-4 border-t border-tinta/20 flex flex-wrap items-center justify-between gap-4">
+        <span class="font-mono text-xs text-tinta/70">
+          MOTOR DE IA // GOOGLE GEMINI & GEMS PERSONALIZADOS
+        </span>
+        <a 
+          href="https://gemini.google.com/" 
+          target="_blank" 
+          rel="noopener"
+          class="inline-flex items-center justify-center px-6 py-3.5 bg-musgo text-papel font-mono text-xs font-bold tracking-wider uppercase border-2 border-tinta shadow-field hover:shadow-field-hover hover:bg-tierra transition-all"
+        >
+          Abrir Gemini →
+        </a>
       </div>
     </div>
 
     <!-- TRATAMIENTO 4: DOCS & AUTOMATIZACIÓN -->
-    <div id="modulo-docs-casos" class="scroll-mt-20 border-2 border-tinta bg-papel p-6 sm:p-8 shadow-field">
-      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4 mb-6">
+    <div id="modulo-docs-casos" class="scroll-mt-20 border-2 border-tinta bg-papel p-6 sm:p-8 shadow-field space-y-8">
+      <!-- Parcel Header -->
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4">
         <div class="flex items-center gap-3">
           <span class="px-2.5 py-1 bg-musgo text-papel font-mono text-xs font-bold border border-tinta">
             TRATAMIENTO T4
@@ -205,38 +303,48 @@ A partir de las fuentes cargadas correspondientes a los ensayos de rendimiento 2
         <span class="font-mono text-xs text-trigo font-bold bg-tierra px-2.5 py-0.5">DURACIÓN: 2 HORAS</span>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <div class="lg:col-span-5 space-y-4">
-          <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold">
-            Docs & Automatización de Informes Técnicos
-          </h2>
-          <p class="font-sans text-sm sm:text-base text-tinta/85 leading-relaxed">
-            Ensamblaje del flujo completo: desde los datos brutos de la libreta de campo hasta el informe técnico estructurado en Google Docs, listo para clientes, comités científicos o directivos.
-          </p>
-          <ul class="space-y-2 text-xs font-mono text-tinta/90 pt-2">
-            <li class="flex items-start gap-2">
-              <span class="text-musgo font-bold">▶</span>
-              <span>Plantillas dinámicas de informes DBCA con IA integrada</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-musgo font-bold">▶</span>
-              <span>Redacción automatizada de resúmenes ejecutivos y conclusiones técnicas</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-musgo font-bold">▶</span>
-              <span>Flujo de revisión crítica y estandarización de formatos</span>
-            </li>
-          </ul>
-        </div>
+      <!-- Theory Section -->
+      <div class="space-y-4 max-w-4xl">
+        <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold">
+          Docs & Automatización de Informes Técnicos
+        </h2>
+        <p class="font-sans text-sm sm:text-base text-tinta/85 leading-relaxed">
+          Ensamblaje del flujo completo: desde los datos brutos de la libreta de campo hasta el informe técnico estructurado en Google Docs, listo para clientes, comités científicos o directivos.
+        </p>
+        <ul class="space-y-2 text-xs font-mono text-tinta/90 pt-1">
+          <li class="flex items-start gap-2">
+            <span class="text-musgo font-bold">▶</span>
+            <span>Plantillas dinámicas de informes DBCA con IA integrada</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-musgo font-bold">▶</span>
+            <span>Redacción automatizada de resúmenes ejecutivos y conclusiones técnicas</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-musgo font-bold">▶</span>
+            <span>Flujo de revisión crítica y estandarización de formatos</span>
+          </li>
+        </ul>
+      </div>
 
-        <div class="lg:col-span-7">
-          <PromptInspector 
-            protocolId="PROT-04"
-            title="Generación de Informe Técnico DBCA"
-            role="Redactor Científico y Técnico Agronómico"
-            inputData="Resultados estadísticos ANOVA y prueba Tukey (p < 0.05)"
-            outputFormat="Informe técnico con introducción, metodología, discusión y recomendaciones"
-            promptText={`[INSTRUCCIÓN]: Redacta la sección de Discusión de Resultados para el informe final del ensayo "Evaluación de Bioinsumos en Tomate bajo DBCA".
+      <!-- Video Tutorial Component replacing static step cards -->
+      <VideoTutorial 
+        videoId="dQw4w9WgXcQ"
+        title="Tutorial: Automatización de Informes en Google Docs paso a paso"
+        toolName="Google Docs"
+        toolUrl="https://docs.new"
+        steps={stepsDocs}
+      />
+
+      <!-- Literal Prompt (PROT-04) goes AFTER the tutorial -->
+      <div class="border-t border-tinta/20 pt-6">
+        <PromptInspector 
+          protocolId="PROT-04"
+          title="Generación de Informe Técnico DBCA"
+          role="Redactor Científico y Técnico Agronómico"
+          inputData="Resultados estadísticos ANOVA y prueba Tukey (p < 0.05)"
+          outputFormat="Informe técnico con introducción, metodología, discusión y recomendaciones"
+          promptText={`[INSTRUCCIÓN]: Redacta la sección de Discusión de Resultados para el informe final del ensayo "Evaluación de Bioinsumos en Tomate bajo DBCA".
 
 [DATOS CLAVE]:
 - Tratamiento T3 (Bioestimulante foliar) superó significativamente al testigo (T0) en un 24.3% de biomasa fresca (Tukey p = 0.012).
@@ -245,8 +353,22 @@ A partir de las fuentes cargadas correspondientes a los ensayos de rendimiento 2
 [REQUISITOS]:
 - Explica los resultados basándote en la actividad auxínica y la absorción de nutrientes.
 - Mantén un tono técnico riguroso, sin adjetivos comerciales.`}
-          />
-        </div>
+        />
+      </div>
+
+      <!-- Parcel Closing Direct Action Link Button -->
+      <div class="pt-4 border-t border-tinta/20 flex flex-wrap items-center justify-between gap-4">
+        <span class="font-mono text-xs text-tinta/70">
+          HERRAMIENTA FINAL // GOOGLE DOCS & INFORMES TÉCNICOS
+        </span>
+        <a 
+          href="https://docs.new" 
+          target="_blank" 
+          rel="noopener"
+          class="inline-flex items-center justify-center px-6 py-3.5 bg-musgo text-papel font-mono text-xs font-bold tracking-wider uppercase border-2 border-tinta shadow-field hover:shadow-field-hover hover:bg-tierra transition-all"
+        >
+          Abrir Google Docs →
+        </a>
       </div>
     </div>
 
