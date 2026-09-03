@@ -1,5 +1,5 @@
 ---
-// DiagramaFlujoConectado.astro - Diagrama lineal elaborado del flujo de trabajo experimental de campo a reporte final
+// DiagramaFlujoConectado.astro - Diagrama lineal del nuevo flujo de trabajo de investigación de 4 pasos
 ---
 
 <div class="my-6 border-2 border-tinta bg-niebla p-4 sm:p-7 shadow-field space-y-5">
@@ -7,10 +7,10 @@
   <div class="flex flex-wrap items-center justify-between gap-2 border-b border-tinta/20 pb-3">
     <div class="flex items-center gap-2 font-mono text-xs text-tinta/90">
       <span class="w-2.5 h-2.5 bg-trigo inline-block"></span>
-      <span class="font-bold">PIPELINE EXPERIMENTAL LINEAL // METODOLOGÍA AGRO-COMPUTACIONAL</span>
+      <span class="font-bold">PIPELINE DE INVESTIGACIÓN LINEAL // METODOLOGÍA ACADÉMICA</span>
     </div>
     <span class="font-mono text-[10px] sm:text-[11px] bg-tierra text-trigo font-bold px-2.5 py-0.5">
-      FLUJO INTEGRADO DE PUNTA A PUNTA
+      FLUJO DE 4 PASOS CONECTADOS
     </span>
   </div>
 
@@ -22,210 +22,183 @@
       fill="none" 
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="Diagrama lineal completo del flujo conectado: Insumos de campo, T1 Fundamentos, T2 NotebookLM, T3 Gemini y Gems, T4 Google Docs e Informe Final"
+      aria-label="Diagrama lineal del flujo de 4 pasos: Gemini (Exploración teórica), Google Scholar (Fuentes reales), Exportar RIS (Citas RefMan), NotebookLM (Síntesis y marco teórico), y pulido final en Google Docs"
     >
       <!-- Base Background Grid Panel -->
       <rect width="1080" height="340" fill="#DCE3D9" rx="4"/>
       
       <!-- Linear Connecting Pipe / Track -->
-      <line x1="60" y1="140" x2="1020" y2="140" stroke="#1F2318" stroke-width="4"/>
-      <line x1="60" y1="140" x2="1020" y2="140" stroke="#C9A227" stroke-width="2" stroke-dasharray="8 6"/>
+      <line x1="50" y1="135" x2="1030" y2="135" stroke="#1F2318" stroke-width="4"/>
+      <line x1="50" y1="135" x2="1030" y2="135" stroke="#C9A227" stroke-width="2" stroke-dasharray="8 6"/>
 
-      <!-- ================= NODE 0: INSUMOS DE CAMPO ================= -->
-      <g transform="translate(15, 45)">
-        <rect x="0" y="0" width="150" height="190" rx="4" fill="#FAF8F3" stroke="#1F2318" stroke-width="1.8"/>
+      <!-- ================= NODE 1: GEMINI ================= -->
+      <g transform="translate(25, 35)">
+        <rect x="0" y="0" width="180" height="200" rx="4" fill="#FAF8F3" stroke="#1F2318" stroke-width="1.8"/>
         <!-- Header badge -->
-        <rect x="0" y="0" width="150" height="28" rx="4" fill="#2B2418"/>
-        <text x="75" y="18" fill="#C9A227" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="bold" text-anchor="middle">00 · INSUMOS</text>
+        <rect x="0" y="0" width="180" height="28" rx="4" fill="#46573C"/>
+        <text x="90" y="18" fill="#E8E4D6" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="bold" text-anchor="middle">01 · GEMINI</text>
         
         <!-- Node title -->
-        <text x="75" y="52" fill="#1F2318" font-family="'Fraunces', serif" font-size="13" font-weight="bold" text-anchor="middle">Datos de Campo</text>
-        <line x1="20" y1="60" x2="130" y2="60" stroke="#1F2318" stroke-width="0.8"/>
+        <text x="90" y="52" fill="#1F2318" font-family="'Fraunces', serif" font-size="13" font-weight="bold" text-anchor="middle">Exploración Teórica</text>
+        <line x1="20" y1="60" x2="160" y2="60" stroke="#1F2318" stroke-width="0.8"/>
         
         <!-- Bullets -->
-        <text x="12" y="80" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="9.5">
-          <tspan x="12" dy="0">• Libretas de pesaje</tspan>
-          <tspan x="12" dy="16">• Papers & manuales</tspan>
-          <tspan x="12" dy="16">• Variables de suelo</tspan>
-          <tspan x="12" dy="16">• Factores de estrés</tspan>
+        <text x="14" y="80" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="9.5">
+          <tspan x="14" dy="0">• 3–5 ejes teóricos clave</tspan>
+          <tspan x="14" dy="16">• Matriz conceptual</tspan>
+          <tspan x="14" dy="16">• Hipótesis de trabajo</tspan>
+          <tspan x="14" dy="16">• Citas preliminares</tspan>
         </text>
 
         <!-- Stage badge -->
-        <rect x="10" y="152" width="130" height="24" rx="2" fill="#2B2418" opacity="0.1"/>
-        <text x="75" y="168" fill="#2B2418" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="bold" text-anchor="middle">[Entrada Bruta]</text>
-      </g>
-
-      <!-- Connection 0 -> 1 -->
-      <g transform="translate(170, 130)">
-        <circle cx="10" cy="10" r="12" fill="#46573C" stroke="#1F2318" stroke-width="1.5"/>
-        <path d="M7 10 L13 10 M10 7 L13 10 L10 13" stroke="#E8E4D6" stroke-width="2" stroke-linecap="round"/>
-      </g>
-
-      <!-- ================= NODE 1: T1 FUNDAMENTOS ================= -->
-      <g transform="translate(195, 45)">
-        <rect x="0" y="0" width="165" height="190" rx="4" fill="#E8E4D6" stroke="#1F2318" stroke-width="1.8"/>
-        <!-- Header badge -->
-        <rect x="0" y="0" width="165" height="28" rx="4" fill="#46573C"/>
-        <text x="82.5" y="18" fill="#E8E4D6" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="bold" text-anchor="middle">PARCELA T1</text>
-        
-        <!-- Node title -->
-        <text x="82.5" y="52" fill="#1F2318" font-family="'Fraunces', serif" font-size="13" font-weight="bold" text-anchor="middle">Fundamentos & Rol</text>
-        <line x1="20" y1="60" x2="145" y2="60" stroke="#1F2318" stroke-width="0.8"/>
-        
-        <!-- Bullets -->
-        <text x="12" y="80" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="9.5">
-          <tspan x="12" dy="0">• Framing experimental</tspan>
-          <tspan x="12" dy="16">• Calibración de rol</tspan>
-          <tspan x="12" dy="16">• Cero alucinación</tspan>
-          <tspan x="12" dy="16">• Formato estructurado</tspan>
-        </text>
-
-        <!-- Stage badge -->
-        <rect x="10" y="152" width="145" height="24" rx="2" fill="#46573C" opacity="0.15"/>
-        <text x="82.5" y="168" fill="#46573C" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="bold" text-anchor="middle">SALIDA: Prompt Calibrado</text>
+        <rect x="10" y="160" width="160" height="26" rx="2" fill="#46573C" opacity="0.15"/>
+        <text x="90" y="177" fill="#46573C" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="bold" text-anchor="middle">SALIDA: Ejes & Conceptos</text>
       </g>
 
       <!-- Connection 1 -> 2 -->
-      <g transform="translate(365, 130)">
+      <g transform="translate(210, 125)">
         <circle cx="10" cy="10" r="12" fill="#46573C" stroke="#1F2318" stroke-width="1.5"/>
         <path d="M7 10 L13 10 M10 7 L13 10 L10 13" stroke="#E8E4D6" stroke-width="2" stroke-linecap="round"/>
       </g>
 
-      <!-- ================= NODE 2: T2 NOTEBOOKLM ================= -->
-      <g transform="translate(390, 45)">
-        <rect x="0" y="0" width="165" height="190" rx="4" fill="#E8E4D6" stroke="#1F2318" stroke-width="1.8"/>
+      <!-- ================= NODE 2: GOOGLE SCHOLAR ================= -->
+      <g transform="translate(235, 35)">
+        <rect x="0" y="0" width="180" height="200" rx="4" fill="#FAF8F3" stroke="#1F2318" stroke-width="1.8"/>
         <!-- Header badge -->
-        <rect x="0" y="0" width="165" height="28" rx="4" fill="#46573C"/>
-        <text x="82.5" y="18" fill="#E8E4D6" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="bold" text-anchor="middle">PARCELA T2</text>
+        <rect x="0" y="0" width="180" height="28" rx="4" fill="#46573C"/>
+        <text x="90" y="18" fill="#E8E4D6" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="bold" text-anchor="middle">02 · SCHOLAR</text>
         
         <!-- Node title -->
-        <text x="82.5" y="52" fill="#1F2318" font-family="'Fraunces', serif" font-size="13" font-weight="bold" text-anchor="middle">NotebookLM</text>
-        <line x1="20" y1="60" x2="145" y2="60" stroke="#1F2318" stroke-width="0.8"/>
+        <text x="90" y="52" fill="#1F2318" font-family="'Fraunces', serif" font-size="13" font-weight="bold" text-anchor="middle">Fuentes Reales</text>
+        <line x1="20" y1="60" x2="160" y2="60" stroke="#1F2318" stroke-width="0.8"/>
         
         <!-- Bullets -->
-        <text x="12" y="80" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="9.5">
-          <tspan x="12" dy="0">• Ingesta masiva PDF</tspan>
-          <tspan x="12" dy="16">• Síntesis de cultivares</tspan>
-          <tspan x="12" dy="16">• Citas a nivel de pág.</tspan>
-          <tspan x="12" dy="16">• Evidencia trazable</tspan>
+        <text x="14" y="80" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="9.5">
+          <tspan x="14" dy="0">• Papers empíricos reales</tspan>
+          <tspan x="14" dy="16">• Revisiones sistemáticas</tspan>
+          <tspan x="14" dy="16">• Reemplazo de hipótesis</tspan>
+          <tspan x="14" dy="16">• Sin costo ni registro</tspan>
         </text>
 
         <!-- Stage badge -->
-        <rect x="10" y="152" width="145" height="24" rx="2" fill="#46573C" opacity="0.15"/>
-        <text x="82.5" y="168" fill="#46573C" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="bold" text-anchor="middle">SALIDA: Tablas con Citas</text>
+        <rect x="10" y="160" width="160" height="26" rx="2" fill="#46573C" opacity="0.15"/>
+        <text x="90" y="177" fill="#46573C" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="bold" text-anchor="middle">SALIDA: Artículos Reales</text>
       </g>
 
       <!-- Connection 2 -> 3 -->
-      <g transform="translate(560, 130)">
+      <g transform="translate(420, 125)">
         <circle cx="10" cy="10" r="12" fill="#C9A227" stroke="#1F2318" stroke-width="1.5"/>
         <path d="M7 10 L13 10 M10 7 L13 10 L10 13" stroke="#1F2318" stroke-width="2" stroke-linecap="round"/>
       </g>
 
-      <!-- ================= NODE 3: T3 GEMINI & GEMS ================= -->
-      <g transform="translate(585, 45)">
-        <rect x="0" y="0" width="165" height="190" rx="4" fill="#E8E4D6" stroke="#1F2318" stroke-width="1.8"/>
+      <!-- ================= NODE 3: EXPORTAR RIS ================= -->
+      <g transform="translate(445, 35)">
+        <rect x="0" y="0" width="180" height="200" rx="4" fill="#FAF8F3" stroke="#1F2318" stroke-width="1.8"/>
         <!-- Header badge -->
-        <rect x="0" y="0" width="165" height="28" rx="4" fill="#2B2418"/>
-        <text x="82.5" y="18" fill="#C9A227" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="bold" text-anchor="middle">PARCELA T3</text>
+        <rect x="0" y="0" width="180" height="28" rx="4" fill="#2B2418"/>
+        <text x="90" y="18" fill="#C9A227" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="bold" text-anchor="middle">03 · CITAS RIS</text>
         
         <!-- Node title -->
-        <text x="82.5" y="52" fill="#1F2318" font-family="'Fraunces', serif" font-size="13" font-weight="bold" text-anchor="middle">Gemini & Gems</text>
-        <line x1="20" y1="60" x2="145" y2="60" stroke="#1F2318" stroke-width="0.8"/>
+        <text x="90" y="52" fill="#1F2318" font-family="'Fraunces', serif" font-size="13" font-weight="bold" text-anchor="middle">Exportar RefMan</text>
+        <line x1="20" y1="60" x2="160" y2="60" stroke="#1F2318" stroke-width="0.8"/>
         
         <!-- Bullets -->
-        <text x="12" y="80" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="9.5">
-          <tspan x="12" dy="0">• Gem "AgroAuditor"</tspan>
-          <tspan x="12" dy="16">• Detección de outliers</tspan>
-          <tspan x="12" dy="16">• Scripts R (ANOVA/Tukey)</tspan>
-          <tspan x="12" dy="16">• Diagnóstico visual</tspan>
+        <text x="14" y="80" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="9.5">
+          <tspan x="14" dy="0">• Clic en "Citar" bajo paper</tspan>
+          <tspan x="14" dy="16">• Descarga de archivo .ris</tspan>
+          <tspan x="14" dy="16">• Colección de PDFs</tspan>
+          <tspan x="14" dy="16">• Opción "Mi biblioteca"</tspan>
         </text>
 
         <!-- Stage badge -->
-        <rect x="10" y="152" width="145" height="24" rx="2" fill="#C9A227" opacity="0.25"/>
-        <text x="82.5" y="168" fill="#2B2418" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="bold" text-anchor="middle">SALIDA: Datos Auditados</text>
+        <rect x="10" y="160" width="160" height="26" rx="2" fill="#C9A227" opacity="0.25"/>
+        <text x="90" y="177" fill="#2B2418" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="bold" text-anchor="middle">SALIDA: PDFs + Archivo .ris</text>
       </g>
 
       <!-- Connection 3 -> 4 -->
-      <g transform="translate(755, 130)">
+      <g transform="translate(630, 125)">
         <circle cx="10" cy="10" r="12" fill="#46573C" stroke="#1F2318" stroke-width="1.5"/>
         <path d="M7 10 L13 10 M10 7 L13 10 L10 13" stroke="#E8E4D6" stroke-width="2" stroke-linecap="round"/>
       </g>
 
-      <!-- ================= NODE 4: T4 GOOGLE DOCS ================= -->
-      <g transform="translate(780, 45)">
-        <rect x="0" y="0" width="155" height="190" rx="4" fill="#FFFDF8" stroke="#46573C" stroke-width="2"/>
+      <!-- ================= NODE 4: NOTEBOOKLM ================= -->
+      <g transform="translate(655, 35)">
+        <rect x="0" y="0" width="190" height="200" rx="4" fill="#FFFDF8" stroke="#46573C" stroke-width="2"/>
         <!-- Header badge -->
-        <rect x="0" y="0" width="155" height="28" rx="4" fill="#46573C"/>
-        <text x="77.5" y="18" fill="#E8E4D6" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="bold" text-anchor="middle">PARCELA T4</text>
+        <rect x="0" y="0" width="190" height="28" rx="4" fill="#46573C"/>
+        <text x="95" y="18" fill="#E8E4D6" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="bold" text-anchor="middle">04 · NOTEBOOKLM</text>
         
         <!-- Node title -->
-        <text x="77.5" y="52" fill="#1F2318" font-family="'Fraunces', serif" font-size="13" font-weight="bold" text-anchor="middle">Google Docs</text>
-        <line x1="18" y1="60" x2="137" y2="60" stroke="#1F2318" stroke-width="0.8"/>
+        <text x="95" y="52" fill="#1F2318" font-family="'Fraunces', serif" font-size="13" font-weight="bold" text-anchor="middle">Síntesis & Marco</text>
+        <line x1="20" y1="60" x2="170" y2="60" stroke="#1F2318" stroke-width="0.8"/>
         
         <!-- Bullets -->
-        <text x="10" y="80" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="9.5">
-          <tspan x="10" dy="0">• Gemini en Docs</tspan>
-          <tspan x="10" dy="16">• Redacción discusión</tspan>
-          <tspan x="10" dy="16">• Tablas ANOVA final</tspan>
-          <tspan x="10" dy="16">• Conclusiones técnicas</tspan>
+        <text x="14" y="80" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="9.5">
+          <tspan x="14" dy="0">• Carga estructurada de PDFs</tspan>
+          <tspan x="14" dy="16">• Citas ancladas a página</tspan>
+          <tspan x="14" dy="16">• Síntesis rigurosa sin inventos</tspan>
+          <tspan x="14" dy="16">• Redacción de borrador (1000 p.)</tspan>
         </text>
 
         <!-- Stage badge -->
-        <rect x="8" y="152" width="139" height="24" rx="2" fill="#46573C" opacity="0.15"/>
-        <text x="77.5" y="168" fill="#1F2318" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="bold" text-anchor="middle">SALIDA: Borrador Integral</text>
+        <rect x="10" y="160" width="170" height="26" rx="2" fill="#46573C" opacity="0.15"/>
+        <text x="95" y="177" fill="#1F2318" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="bold" text-anchor="middle">SALIDA: Borrador con Evidencia</text>
       </g>
 
-      <!-- Connection 4 -> 5 -->
-      <g transform="translate(940, 130)">
+      <!-- Connection 4 -> Final -->
+      <g transform="translate(850, 125)">
         <circle cx="10" cy="10" r="12" fill="#C9A227" stroke="#1F2318" stroke-width="1.5"/>
         <path d="M7 10 L13 10 M10 7 L13 10 L10 13" stroke="#1F2318" stroke-width="2" stroke-linecap="round"/>
       </g>
 
-      <!-- ================= NODE 5: ENTREGABLE FINAL ================= -->
-      <g transform="translate(965, 45)">
-        <rect x="0" y="0" width="105" height="190" rx="4" fill="#C9A227" fill-opacity="0.3" stroke="#1F2318" stroke-width="2"/>
+      <!-- ================= FINAL DELIVERABLE: DOCS ================= -->
+      <g transform="translate(875, 35)">
+        <rect x="0" y="0" width="180" height="200" rx="4" fill="#C9A227" fill-opacity="0.3" stroke="#1F2318" stroke-width="2"/>
         <!-- Header badge -->
-        <rect x="0" y="0" width="105" height="28" rx="4" fill="#2B2418"/>
-        <text x="52.5" y="18" fill="#C9A227" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="bold" text-anchor="middle">ENTREGABLE</text>
+        <rect x="0" y="0" width="180" height="28" rx="4" fill="#2B2418"/>
+        <text x="90" y="18" fill="#C9A227" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="bold" text-anchor="middle">CIERRE // DOCS</text>
         
         <!-- Node title -->
-        <text x="52.5" y="52" fill="#1F2318" font-family="'Fraunces', serif" font-size="12.5" font-weight="bold" text-anchor="middle">Informe DBCA</text>
-        <line x1="10" y1="60" x2="95" y2="60" stroke="#1F2318" stroke-width="0.8"/>
+        <text x="90" y="52" fill="#1F2318" font-family="'Fraunces', serif" font-size="12.5" font-weight="bold" text-anchor="middle">Pulido Definitivo</text>
+        <line x1="20" y1="60" x2="160" y2="60" stroke="#1F2318" stroke-width="0.8"/>
         
         <!-- Bullets -->
-        <text x="8" y="80" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="9">
-          <tspan x="8" dy="0">✔ Rigor científico</tspan>
-          <tspan x="8" dy="16">✔ Cero alucinación</tspan>
-          <tspan x="8" dy="16">✔ Citas exactas</tspan>
-          <tspan x="8" dy="16">✔ Listo p/ tesis</tspan>
+        <text x="14" y="80" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="9">
+          <tspan x="14" dy="0">✔ Pegado en Google Docs</tspan>
+          <tspan x="14" dy="16">✔ Panel Gemini integrado</tspan>
+          <tspan x="14" dy="16">✔ Cohesión y transiciones</tspan>
+          <tspan x="14" dy="16">✔ Marco teórico final</tspan>
         </text>
 
         <!-- Stage badge -->
-        <rect x="6" y="152" width="93" height="24" rx="2" fill="#C9A227" stroke="#1F2318" stroke-width="0.8"/>
-        <text x="52.5" y="168" fill="#1F2318" font-family="'IBM Plex Mono', monospace" font-size="8" font-weight="bold" text-anchor="middle">100% VALIDADO</text>
+        <rect x="10" y="160" width="160" height="26" rx="2" fill="#C9A227" stroke="#1F2318" stroke-width="0.8"/>
+        <text x="90" y="177" fill="#1F2318" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="bold" text-anchor="middle">100% VERIFICADO</text>
       </g>
 
       <!-- Bottom Timeline Sequence Indicators -->
       <g transform="translate(20, 255)">
-        <rect x="0" y="0" width="1040" height="65" rx="4" fill="#FAF8F3" stroke="#1F2318" stroke-width="1.2"/>
-        <text x="20" y="24" fill="#46573C" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="bold">FASE 1: CALIBRACIÓN</text>
-        <text x="20" y="44" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="10.5" opacity="0.85">Definir rol, límites y control estricto de fuentes.</text>
+        <rect x="0" y="0" width="1040" height="68" rx="4" fill="#FAF8F3" stroke="#1F2318" stroke-width="1.2"/>
+        <text x="20" y="24" fill="#46573C" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="bold">FASE 1: HIPÓTESIS DE TRABAJO</text>
+        <text x="20" y="42" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="10" opacity="0.85">Gemini mapea posibles ejes y conceptos</text>
+        <text x="20" y="55" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="10" opacity="0.85">preliminares sin citas definitivas.</text>
 
-        <line x1="330" y1="10" x2="330" y2="55" stroke="#1F2318" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="350" y1="10" x2="350" y2="58" stroke="#1F2318" stroke-width="1" stroke-dasharray="3 3"/>
 
-        <text x="350" y="24" fill="#46573C" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="bold">FASE 2: EXTRACCIÓN & AUDITORÍA</text>
-        <text x="350" y="44" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="10.5" opacity="0.85">NotebookLM conecta literatura y Gems auditan datos de campo.</text>
+        <text x="370" y="24" fill="#46573C" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="bold">FASE 2: EVIDENCIA REAL</text>
+        <text x="370" y="42" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="10" opacity="0.85">Google Scholar localiza artículos empíricos</text>
+        <text x="370" y="55" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="10" opacity="0.85">y se exportan en formato .ris (RefMan).</text>
 
-        <line x1="730" y1="10" x2="730" y2="55" stroke="#1F2318" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="710" y1="10" x2="710" y2="58" stroke="#1F2318" stroke-width="1" stroke-dasharray="3 3"/>
 
-        <text x="750" y="24" fill="#46573C" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="bold">FASE 3: ENSAMBLAJE FINAL</text>
-        <text x="750" y="44" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="10.5" opacity="0.85">Docs estructura y valida el informe técnico reproducible.</text>
+        <text x="730" y="24" fill="#46573C" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="bold">FASE 3: SÍNTESIS & REDACCIÓN</text>
+        <text x="730" y="42" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="10" opacity="0.85">NotebookLM redacta anclado a los PDFs;</text>
+        <text x="730" y="55" fill="#1F2318" font-family="'Public Sans', sans-serif" font-size="10" opacity="0.85">Google Docs pule la versión definitiva.</text>
       </g>
     </svg>
   </div>
 
   <div class="pt-2 border-t border-tinta/10 flex flex-wrap items-center justify-between text-[11px] font-mono text-tinta/75">
-    <span>CONECTIVIDAD METODOLÓGICA: CADA ETAPA ALIMENTA A LA SIGUIENTE</span>
-    <span class="text-musgo font-bold">RECORRIDO SECUENCIAL RECOMENDADO: T1 → T2 → T3 → T4</span>
+    <span>FLUJO SECUENCIAL DE INVESTIGACIÓN: GEMINI → GOOGLE SCHOLAR → EXPORTAR RIS → NOTEBOOKLM</span>
+    <span class="text-musgo font-bold">RECORRIDO EN 4 PASOS SIN ALUCINACIONES</span>
   </div>
 </div>

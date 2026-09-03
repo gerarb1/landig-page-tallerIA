@@ -3,33 +3,25 @@ import Layout from '../layouts/Layout.astro';
 import HeroDBCA from '../components/HeroDBCA.astro';
 import PromptInspector from '../components/PromptInspector.astro';
 import FacilitadorCreditos from '../components/FacilitadorCreditos.astro';
-import VideoTutorial from '../components/VideoTutorial.astro';
+import TutorialStep from '../components/TutorialStep.astro';
 import DiagramaAnatomiaPrompt from '../components/DiagramaAnatomiaPrompt.astro';
 import DiagramaFlujoConectado from '../components/DiagramaFlujoConectado.astro';
 
-// Steps data with direct tool links for each parcel
-const stepsNotebookLM = [
-  { stepNumber: 1, text: "Inicia sesión con tu cuenta de Google en", linkText: "notebooklm.google.com", url: "https://notebooklm.google.com/" },
-  { stepNumber: 2, text: 'Crea un nuevo cuaderno haciendo clic en "+ Nuevo notebook" dentro de', linkText: "NotebookLM", url: "https://notebooklm.google.com/" },
-  { stepNumber: 3, text: "Arrastra y sube tus PDFs y papers técnicos al panel de fuentes en", linkText: "NotebookLM", url: "https://notebooklm.google.com/" },
-  { stepNumber: 4, text: "Pega el prompt de análisis agronómico directamente en el chat de", linkText: "NotebookLM", url: "https://notebooklm.google.com/" },
-  { stepNumber: 5, text: "Verifica las citas ancladas y notas al pie dentro de", linkText: "NotebookLM", url: "https://notebooklm.google.com/" },
-];
-
+// Pasos descriptivos en texto plano para cada parcela (sin enlaces redundantes)
 const stepsGemini = [
-  { stepNumber: 1, text: "Accede e inicia sesión con tu cuenta en", linkText: "gemini.google.com", url: "https://gemini.google.com/" },
-  { stepNumber: 2, text: 'En el panel lateral izquierdo, ve a "Explorar Gems" y selecciona "+ Nuevo Gem" en', linkText: "Gemini Gems", url: "https://gemini.google.com/" },
-  { stepNumber: 3, text: "Configura el rol y las reglas pegando el bloque de instrucciones en", linkText: "Gemini", url: "https://gemini.google.com/" },
-  { stepNumber: 4, text: 'Nombra tu asistente como "AgroData Quality Auditor" y guárdalo en', linkText: "Gemini", url: "https://gemini.google.com/" },
-  { stepNumber: 5, text: "Prueba tu Gem con registros reales de campo directamente en", linkText: "gemini.google.com", url: "https://gemini.google.com/" },
+  "Accede con tu cuenta de Google en Gemini.",
+  "Define el rol de investigador senior y el tema de investigación.",
+  "Ejecuta la plantilla de ejes teóricos reemplazando los corchetes [].",
+  "Solicita la matriz condensada de conceptos clave y autores sugeridos.",
+  "Usa las hipótesis generadas para orientar tu búsqueda de literatura real en el siguiente paso."
 ];
 
-const stepsDocs = [
-  { stepNumber: 1, text: "Crea un documento en blanco al instante ingresando a", linkText: "docs.new", url: "https://docs.new" },
-  { stepNumber: 2, text: "Pega los fragmentos y análisis obtenidos previamente en tu archivo de", linkText: "Google Docs", url: "https://docs.google.com/" },
-  { stepNumber: 3, text: "Abre el panel lateral integrado de Gemini dentro de", linkText: "Google Docs", url: "https://docs.google.com/" },
-  { stepNumber: 4, text: "Ejecuta el prompt de redacción técnica PROT-04 en el panel de", linkText: "Docs Gemini", url: "https://docs.google.com/" },
-  { stepNumber: 5, text: "Revisa y ajusta la discusión del informe técnico final en", linkText: "Google Docs", url: "https://docs.google.com/" },
+const stepsNotebookLM = [
+  "Inicia sesión con tu cuenta de Google en NotebookLM.",
+  "Crea un nuevo cuaderno haciendo clic en '+ Nuevo notebook'.",
+  "Arrastra y sube los PDFs académicos descargados al panel de fuentes.",
+  "Ejecuta la plantilla de síntesis rigurosa directamente en el chat.",
+  "Redacta el borrador del marco teórico con citas ancladas a páginas exactas."
 ];
 ---
 
@@ -60,7 +52,6 @@ const stepsDocs = [
           </span>
           <span class="font-mono text-xs text-tinta/70">[COORDENADA: 01, A] // BLOQUE I</span>
         </div>
-        <span class="font-mono text-xs text-trigo font-bold bg-tierra px-2.5 py-0.5">DURACIÓN: 2 HORAS</span>
       </div>
 
       <!-- Theory & Anatomy Layout -->
@@ -117,7 +108,7 @@ const stepsDocs = [
             <span>// CÓMO SE CONECTA TODO</span>
           </div>
           <p class="font-sans text-sm sm:text-base text-tinta/90 leading-relaxed">
-            Cada parcela que sigue no es una herramienta aislada — es un paso del mismo flujo. Lo que extraes en NotebookLM (T2) alimenta los Gems que configuras en T3, y todo converge en el documento final de T4. Recorre las parcelas en orden la primera vez.
+            Cada parcela que sigue no es una herramienta aislada — es un paso del mismo flujo: Gemini (T2) explora los ejes teóricos iniciales, Google Scholar (T3) provee las fuentes académicas reales exportadas en formato RIS, y NotebookLM (T4) sintetiza y ancla el marco teórico a la evidencia documental. Recorre las parcelas en orden la primera vez.
           </p>
           
           <!-- Visual Roadmap Diagram: Flujo Conectado -->
@@ -126,8 +117,8 @@ const stepsDocs = [
       </div>
     </div>
 
-    <!-- TRATAMIENTO 2: NOTEBOOKLM -->
-    <div id="modulo-notebooklm" class="scroll-mt-20 border-2 border-tinta bg-papel p-6 sm:p-8 shadow-field space-y-8">
+    <!-- TRATAMIENTO 2: GEMINI -->
+    <div id="modulo-gemini" class="scroll-mt-20 border-2 border-tinta bg-papel p-6 sm:p-8 shadow-field space-y-8">
       <!-- Parcel Header -->
       <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4">
         <div class="flex items-center gap-3">
@@ -136,61 +127,412 @@ const stepsDocs = [
           </span>
           <span class="font-mono text-xs text-tinta/70">[COORDENADA: 01, B] // BLOQUE I</span>
         </div>
-        <span class="font-mono text-xs text-trigo font-bold bg-tierra px-2.5 py-0.5">DURACIÓN: 2 HORAS</span>
       </div>
 
       <!-- Theory Section -->
       <div class="space-y-4 max-w-4xl">
         <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold">
-          NotebookLM como Cuaderno de Campo Inteligente
+          Gemini — Exploración Teórica
         </h2>
         <p class="font-sans text-sm sm:text-base text-tinta/85 leading-relaxed">
-          Convierte cientos de PDFs de literatura técnica, fichas de registro de cultivares y manuales de plagas en una base de conocimiento fundamentada que cita fuentes exactas con cada respuesta.
+          Gemini te ayuda a explorar posibles ejes teóricos para tu investigación antes de buscar fuentes reales. Todo lo que genera aquí es una hipótesis de trabajo, no una cita verificada — eso se confirma en el siguiente paso.
         </p>
         <ul class="space-y-2 text-xs font-mono text-tinta/90 pt-1">
           <li class="flex items-start gap-2">
             <span class="text-musgo font-bold">▶</span>
-            <span>Carga estructurada de fuentes científicas y manuales ICA/SAG/INIFAP</span>
+            <span>Identificación de 3 a 5 ejes teóricos y principales corrientes de pensamiento</span>
           </li>
           <li class="flex items-start gap-2">
             <span class="text-musgo font-bold">▶</span>
-            <span>Generación de guías de campo y preguntas frecuentes automáticas</span>
+            <span>Mapeo preliminar de debates, tensiones y autores representativos</span>
           </li>
           <li class="flex items-start gap-2">
             <span class="text-musgo font-bold">▶</span>
-            <span>Extracción de tablas comparativas de tolerancia a plagas</span>
+            <span>Matriz conceptual condensada para delimitar las variables del modelo</span>
           </li>
         </ul>
       </div>
 
-      <!-- Video Tutorial Component replacing static step cards -->
-      <VideoTutorial 
-        videoId="dQw4w9WgXcQ"
-        title="Tutorial: NotebookLM paso a paso"
-        toolName="NotebookLM"
-        toolUrl="https://notebooklm.google.com/"
-        steps={stepsNotebookLM}
-      />
+      <!-- Pasos de ejecución en texto (sin enlaces redundantes) -->
+      <div class="border-2 border-tinta bg-niebla/50 p-5 sm:p-6 rounded-[4px] space-y-3">
+        <div class="flex items-center gap-2 font-mono text-xs font-bold text-tinta">
+          <span class="w-2.5 h-2.5 bg-musgo inline-block"></span>
+          <span>PASOS DE EJECUCIÓN // SECUENCIA METODOLÓGICA:</span>
+        </div>
+        <ol class="space-y-2.5 font-sans text-xs sm:text-sm text-tinta/85">
+          {stepsGemini.map((step, idx) => (
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-musgo text-papel font-mono text-xs font-bold flex items-center justify-center">
+                {idx + 1}
+              </span>
+              <span class="pt-0.5">{step}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
 
-      <!-- Literal Prompt (PROT-02) goes AFTER the tutorial -->
-      <div class="border-t border-tinta/20 pt-6">
+      <!-- Prompt Templates Section -->
+      <div class="border-t border-tinta/20 pt-6 space-y-6">
+        <div>
+          <h3 class="font-fraunces text-xl font-bold text-tinta mb-1">
+            Plantillas de Prompt para Exploración Teórica
+          </h3>
+          <p class="font-sans text-xs text-tinta/70">
+            Copia y adapta estas plantillas sustituyendo los valores entre corchetes con las variables específicas de tu estudio.
+          </p>
+        </div>
+
+        <!-- PLANTILLA 1 — Ejes teóricos -->
         <PromptInspector 
-          protocolId="PROT-02"
-          title="Síntesis de Literatura & Fichas de Variedades"
-          role="Curador de Información Técnica Agronómica"
-          inputData="Corpus de 12 papers sobre resistencia a roya y sequía"
-          outputFormat="Matriz comparativa Markdown con citas directas al párrafo de origen"
-          promptText={`[INSTRUCCIÓN EN NOTEBOOKLM]:
-A partir de las fuentes cargadas correspondientes a los ensayos de rendimiento 2024-2025:
-
-1. Elabora una tabla con las siguientes columnas:
-   - Genotipo / Variedad
-   - Rendimiento promedio (t/ha)
-   - Incidencia de roya (%)
-   - Días a floración
-2. Cita la fuente exacta (documento y página) para cada cifra.
-3. Identifica si existen contradicciones entre las localidades evaluadas.`}
+          protocolId="PLANTILLA 1"
+          title="Ejes teóricos"
+          badgeLeft="PLANTILLA DE PROMPT // GEMINI"
+          badgeRight="PLANTILLA — reemplaza los corchetes []"
+          engine="MOTOR: GOOGLE GEMINI"
+          promptText={`Actúa como investigador senior en [disciplina] especializado en [enfoque/metodología].
+Quiero construir el marco teórico para un trabajo [tema].
+El objetivo de la investigación es: [objetivo]
+Haz lo siguiente:
+- identifica los 3-5 ejes teóricos principales relevantes para este tema.
+- para cada eje, indica: conceptos clave, principales debates o tensiones, autores y corrientes representativas (solo nombre + año, sin inventar).
+- señala qué conceptos son clave para el modelo conceptual o la hipótesis.`}
         />
+
+        <!-- PLANTILLA 2 — Matriz condensada -->
+        <PromptInspector 
+          protocolId="PLANTILLA 2"
+          title="Matriz condensada"
+          badgeLeft="PLANTILLA DE PROMPT // GEMINI"
+          badgeRight="PLANTILLA — reemplaza los corchetes []"
+          engine="MOTOR: GOOGLE GEMINI"
+          promptText={`Con base en la estructura anterior, genera una lista de [número] conceptos clave que deben aparecer en el marco teórico sobre [tema].
+Para cada concepto, indícame: definición breve (máx. 3 líneas), por qué es relevante para el objetivo: [objetivo], 2-4 autores o artículos clásicos asociados (apellido + año, sin inventar detalles).
+Presenta la respuesta en tabla: concepto | definición | relevancia | autores sugeridos`}
+        />
+      </div>
+
+      <!-- Discreet Optional Note: Gem Reusability -->
+      <div class="p-4 bg-niebla/70 border border-tinta/30 rounded-[4px] font-mono text-xs text-tinta/80 space-y-1">
+        <div class="flex items-center gap-1.5 text-musgo font-bold">
+          <span>ℹ</span>
+          <span class="uppercase tracking-wider text-[11px]">NOTA REUTILIZACIÓN // GUARDAR COMO GEM (OPCIONAL)</span>
+        </div>
+        <p class="font-sans text-xs text-tinta/85 leading-relaxed">
+          Opcional: si vas a repetir este mismo prompt seguido —por ejemplo, para asesorar varios temas de tesis— puedes guardarlo como un Gem en Gemini para no reescribirlo cada vez. No es necesario para usarlo una sola vez.
+        </p>
+      </div>
+
+      <!-- Parcel Closing Direct Action Link Button -->
+      <div class="pt-4 border-t border-tinta/20 flex flex-wrap items-center justify-between gap-4">
+        <span class="font-mono text-xs text-tinta/70">
+          HERRAMIENTA EXPERIMENTAL // GOOGLE GEMINI
+        </span>
+        <a 
+          href="https://gemini.google.com/" 
+          target="_blank" 
+          rel="noopener"
+          class="inline-flex items-center justify-center px-6 py-3.5 bg-musgo text-papel font-mono text-xs font-bold tracking-wider uppercase border-2 border-tinta shadow-field hover:shadow-field-hover hover:bg-tierra transition-all"
+        >
+          Abrir Gemini →
+        </a>
+      </div>
+    </div>
+
+    <!-- TRATAMIENTO 3: FUENTES REALES -->
+    <div id="modulo-fuentes-reales" class="scroll-mt-20 border-2 border-tinta bg-niebla p-6 sm:p-8 shadow-field space-y-8">
+      <!-- Parcel Header -->
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="px-2.5 py-1 bg-musgo text-papel font-mono text-xs font-bold border border-tinta">
+            TRATAMIENTO T3
+          </span>
+          <span class="font-mono text-xs text-tinta/70">[COORDENADA: 02, A] // BLOQUE II</span>
+        </div>
+      </div>
+
+      <!-- Theory Section -->
+      <div class="space-y-4 max-w-4xl">
+        <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold">
+          Fuentes Reales — Google Scholar + RIS
+        </h2>
+        <p class="font-sans text-sm sm:text-base text-tinta/85 leading-relaxed">
+          Aquí buscas artículos académicos reales para reemplazar cualquier cita hipotética del paso anterior. Google Scholar es gratis y no requiere cuenta para exportar una cita individual.
+        </p>
+        <ul class="space-y-2 text-xs font-mono text-tinta/90 pt-1">
+          <li class="flex items-start gap-2">
+            <span class="text-musgo font-bold">▶</span>
+            <span>Búsqueda dirigida de estudios empíricos y revisiones sistemáticas indexadas</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-musgo font-bold">▶</span>
+            <span>Descarga de citas estandarizadas RefMan (.ris) sin costo ni registro previo</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-musgo font-bold">▶</span>
+            <span>Construcción de la biblioteca de PDFs que sustentará la síntesis en NotebookLM</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Selector Visual de 2 Rutas (Google Scholar vs Consensus) -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        
+        <!-- COLUMNA A — Google Scholar -->
+        <div class="border-2 border-tinta bg-papel p-5 sm:p-6 rounded-[4px] space-y-6 shadow-sm">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between border-b border-tinta/20 pb-3">
+              <div class="flex items-center gap-2 font-mono text-xs font-bold text-tinta">
+                <span class="w-3 h-3 bg-musgo inline-block"></span>
+                <span>COLUMNA A — Google Scholar</span>
+              </div>
+              <span class="bg-musgo/15 text-musgo text-[10px] font-mono font-bold px-2 py-0.5 border border-musgo/30">
+                DIRECTA // SIN CUENTA
+              </span>
+            </div>
+
+            <p class="font-sans text-xs sm:text-sm text-tinta/85 leading-relaxed">
+              Búsqueda directa, gratis, sin cuenta necesaria para exportar una cita. Adapta los conceptos clave de tu tema a palabras clave normales de búsqueda — no es un chat de IA.
+            </p>
+
+            <!-- Instrucciones de exportación RIS -->
+            <div class="pt-2 space-y-3">
+              <div class="font-mono text-xs font-bold text-tinta/90">
+                <span>INSTRUCCIONES DE EXPORTACIÓN RIS:</span>
+              </div>
+
+              <div class="space-y-2">
+                <TutorialStep 
+                  stepNumber={1}
+                  title="Haz clic en 'Citar'"
+                  instruction="Bajo el resultado que te interese en Google Scholar, pulsa el botón 'Citar' (icono de comillas)."
+                  showMedia={false}
+                />
+                <TutorialStep 
+                  stepNumber={2}
+                  title="Elige 'RefMan'"
+                  instruction="Selecciona la opción 'RefMan' — se descargará automáticamente un archivo con extensión .ris en tu equipo."
+                  showMedia={false}
+                />
+                <TutorialStep 
+                  stepNumber={3}
+                  title="Repite o usa 'Mi biblioteca'"
+                  instruction="Repite con cada artículo relevante (o usa 'Mi biblioteca' para exportar varios a la vez, requiere cuenta de Google)."
+                  showMedia={false}
+                  isLast={true}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMNA B — Consensus (opcional, con IA) -->
+        <div class="border-2 border-tinta bg-papel p-5 sm:p-6 rounded-[4px] space-y-6 shadow-sm">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between border-b border-tinta/20 pb-3">
+              <div class="flex items-center gap-2 font-mono text-xs font-bold text-tinta">
+                <span class="w-3 h-3 bg-trigo inline-block"></span>
+                <span>COLUMNA B — Consensus (opcional, con IA)</span>
+              </div>
+              <span class="bg-trigo/20 text-tierra text-[10px] font-mono font-bold px-2 py-0.5 border border-trigo/50">
+                CONVERSACIONAL
+              </span>
+            </div>
+
+            <p class="font-sans text-xs sm:text-sm text-tinta/85 leading-relaxed">
+              Motor de búsqueda académica con IA — le hablas como a un chat y te devuelve artículos reales con enlace directo a cada fuente. Tiene un tier gratis con límite mensual de búsquedas.
+            </p>
+
+            <div>
+              <a 
+                href="https://consensus.app/" 
+                target="_blank" 
+                rel="noopener"
+                class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-tierra text-trigo font-mono text-xs font-bold tracking-wider uppercase border border-tinta hover:bg-musgo hover:text-papel transition-all"
+              >
+                <span>Abrir Consensus.app ↗</span>
+              </a>
+            </div>
+
+            <!-- Plantillas de prompt trasladadas aquí para Consensus -->
+            <div class="pt-2 space-y-4">
+              <div class="font-mono text-xs font-bold text-tinta/90">
+                <span>PLANTILLAS DE PROMPT CONVERSACIONALES:</span>
+              </div>
+
+              <!-- PLANTILLA 1 — Búsqueda de artículos -->
+              <PromptInspector 
+                protocolId="PLANTILLA 1"
+                title="Búsqueda de artículos"
+                badgeLeft="PLANTILLA DE BÚSQUEDA // CONSENSUS"
+                badgeRight="PLANTILLA — reemplaza los corchetes []"
+                engine="MOTOR: CONSENSUS (IA)"
+                promptText={`Quiero encontrar artículos académicos sobre [conceptos clave] aplicado a [contexto/disciplina].
+Filtra resultados con estos criterios:
+- Estudios empíricos o revisiones sistemáticas.
+- Publicados en revistas académicas reconocidas.
+- Enfocados en [país/sector/población/si aplica].
+- Rango temporal recomendado [año inicio]-[año fin]
+Devuélveme para cada artículo: título, autores, año, revista, tipo de estudio (teórico/empírico/revisión), breve nota sobre cómo se conecta [concepto clave] y [objetivo].
+Prioriza calidad sobre cantidad.`}
+              />
+
+              <!-- PLANTILLA 2 — Acotar la investigación -->
+              <PromptInspector 
+                protocolId="PLANTILLA 2"
+                title="Acotar la investigación"
+                badgeLeft="PLANTILLA DE BÚSQUEDA // CONSENSUS"
+                badgeRight="PLANTILLA — reemplaza los corchetes []"
+                engine="MOTOR: CONSENSUS (IA)"
+                promptText={`Estoy construyendo el marco teórico de un trabajo sobre [tema] con el [objetivo].
+Los ejes teóricos son:
+1. [eje 1]: [breve descripción].
+2. [eje 2]: [breve descripción].
+3. [eje 3]: [breve descripción].
+Para cada eje, indica: 5-10 artículos clave (apellido + año + revista) sin inventar, qué aportan al debate, si existe algún paper de revisión o meta-análisis que sintetice la literatura de ese eje.`}
+              />
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Cierre compartido de ambas columnas -->
+      <div class="p-4 bg-papel border-l-4 border-musgo border border-tinta/20 rounded-[4px] font-sans text-xs sm:text-sm text-tinta/85 leading-relaxed">
+        cualquiera de las dos rutas termina en el mismo lugar — descarga los PDFs y expórtalos a RIS para el siguiente paso en NotebookLM.
+      </div>
+
+      <!-- Parcel Closing Direct Action Link Button (Único enlace a Google Scholar en toda la parcela) -->
+      <div class="pt-4 border-t border-tinta/20 flex flex-wrap items-center justify-between gap-4">
+        <span class="font-mono text-xs text-tinta/70">
+          BUSCADOR ACADÉMICO PRINCIPAL // GOOGLE SCHOLAR
+        </span>
+        <a 
+          href="https://scholar.google.com/" 
+          target="_blank" 
+          rel="noopener"
+          class="inline-flex items-center justify-center px-6 py-3.5 bg-musgo text-papel font-mono text-xs font-bold tracking-wider uppercase border-2 border-tinta shadow-field hover:shadow-field-hover hover:bg-tierra transition-all"
+        >
+          Abrir Google Scholar →
+        </a>
+      </div>
+    </div>
+
+    <!-- TRATAMIENTO 4: NOTEBOOKLM -->
+    <div id="modulo-notebooklm" class="scroll-mt-20 border-2 border-tinta bg-papel p-6 sm:p-8 shadow-field space-y-8">
+      <!-- Parcel Header -->
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="px-2.5 py-1 bg-musgo text-papel font-mono text-xs font-bold border border-tinta">
+            TRATAMIENTO T4
+          </span>
+          <span class="font-mono text-xs text-tinta/70">[COORDENADA: 02, B] // BLOQUE II</span>
+        </div>
+      </div>
+
+      <!-- Theory Section -->
+      <div class="space-y-4 max-w-4xl">
+        <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold">
+          NotebookLM — Síntesis y Marco Teórico
+        </h2>
+        <p class="font-sans text-sm sm:text-base text-tinta/85 leading-relaxed">
+          Sube aquí los PDFs que descargaste en el paso anterior. NotebookLM ancla cada afirmación a la página exacta del documento — es tu verificación final antes de escribir.
+        </p>
+        <ul class="space-y-2 text-xs font-mono text-tinta/90 pt-1">
+          <li class="flex items-start gap-2">
+            <span class="text-musgo font-bold">▶</span>
+            <span>Carga masiva de papers y anclaje estricto de cada cita al párrafo fuente</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-musgo font-bold">▶</span>
+            <span>Detección sistemática de consensos teóricos, controversias y vacíos en la literatura</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-musgo font-bold">▶</span>
+            <span>Redacción del borrador del marco teórico fundamentado con rigor académico</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Pasos de ejecución en texto (sin enlaces redundantes) -->
+      <div class="border-2 border-tinta bg-niebla/50 p-5 sm:p-6 rounded-[4px] space-y-3">
+        <div class="flex items-center gap-2 font-mono text-xs font-bold text-tinta">
+          <span class="w-2.5 h-2.5 bg-musgo inline-block"></span>
+          <span>PASOS DE EJECUCIÓN // SECUENCIA METODOLÓGICA:</span>
+        </div>
+        <ol class="space-y-2.5 font-sans text-xs sm:text-sm text-tinta/85">
+          {stepsNotebookLM.map((step, idx) => (
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-musgo text-papel font-mono text-xs font-bold flex items-center justify-center">
+                {idx + 1}
+              </span>
+              <span class="pt-0.5">{step}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <!-- Prompt Templates Section -->
+      <div class="border-t border-tinta/20 pt-6 space-y-6">
+        <div>
+          <h3 class="font-fraunces text-xl font-bold text-tinta mb-1">
+            Plantillas para Síntesis Rigurosa y Redacción
+          </h3>
+          <p class="font-sans text-xs text-tinta/70">
+            Ejecuta estos prompts directamente en el panel de conversación de NotebookLM sobre los documentos cargados.
+          </p>
+        </div>
+
+        <!-- PLANTILLA 1 — Síntesis rigurosa -->
+        <PromptInspector 
+          protocolId="PLANTILLA 1"
+          title="Síntesis rigurosa"
+          badgeLeft="PLANTILLA DE SÍNTESIS // NOTEBOOKLM"
+          badgeRight="PLANTILLA — reemplaza los corchetes []"
+          engine="MOTOR: NOTEBOOKLM"
+          promptText={`He subido una serie de artículos sobre [tema] y [conceptos clave].
+Quiero una síntesis rigurosa, haz lo siguiente:
+1. identifica los puntos en común entre los artículos respecto a:
+   definiciones de [concepto clave 1], [concepto clave 2], [concepto clave 3],
+   mecanismos causales propuestos, resultados empíricos consistentes.
+2. identifica las diferencias: en el enfoque teórico, en el diseño empírico,
+   en resultados o conclusiones.
+3. señala lagunas o desacuerdos relevantes que justifiquen mi investigación
+   con objetivo: [objetivo].
+Presenta la síntesis en formato estructurado con títulos y viñetas y no inventes referencias que no se encuentren en los PDFs.`}
+        />
+
+        <!-- PLANTILLA 2 — Escritura del marco teórico -->
+        <PromptInspector 
+          protocolId="PLANTILLA 2"
+          title="Escritura del marco teórico"
+          badgeLeft="PLANTILLA DE REDACCIÓN // NOTEBOOKLM"
+          badgeRight="PLANTILLA — reemplaza los corchetes []"
+          engine="MOTOR: NOTEBOOKLM"
+          promptText={`Usando exclusivamente la información contenida en los PDFs que he subido, redacta un borrador de marco teórico de aproximadamente 1000 palabras para una tesis/artículo sobre [tema] con el objetivo de [objetivo].
+Condiciones:
+- organiza el texto con secciones y subsecciones claras basadas en estos ejes: [eje 1], [eje 2], [eje 3].
+- define los conceptos clave, explica los mecanismos y conecta los resultados empíricos de los artículos con mi pregunta de investigación.
+- incluye citas en el texto en formato (autor, año) solo cuando sean respaldados por los PDFs cargados.
+- termina con un breve apartado que conduzca a la hipótesis o al modelo conceptual, explicando la lógica detrás.`}
+        />
+      </div>
+
+      <!-- Lightweight Closing CTA: Pulido en Google Docs -->
+      <div class="p-4 bg-niebla/70 border-l-4 border-musgo rounded-[4px] font-sans text-xs sm:text-sm text-tinta/85 leading-relaxed space-y-2">
+        <p>
+          Tu borrador está listo. El siguiente paso es pulirlo en Google Docs — pega el texto, abre el panel de Gemini integrado, y ajusta cohesión y transiciones antes de considerarlo definitivo.
+        </p>
+        <div>
+          <a 
+            href="https://docs.new" 
+            target="_blank" 
+            rel="noopener"
+            class="inline-flex items-center gap-1 font-mono text-xs text-musgo hover:text-tierra font-bold underline underline-offset-2 transition-colors"
+          >
+            <span>Abrir Google Docs →</span>
+            <span class="text-[10px]">↗</span>
+          </a>
+        </div>
       </div>
 
       <!-- Parcel Closing Direct Action Link Button -->
@@ -205,169 +547,6 @@ A partir de las fuentes cargadas correspondientes a los ensayos de rendimiento 2
           class="inline-flex items-center justify-center px-6 py-3.5 bg-musgo text-papel font-mono text-xs font-bold tracking-wider uppercase border-2 border-tinta shadow-field hover:shadow-field-hover hover:bg-tierra transition-all"
         >
           Abrir NotebookLM →
-        </a>
-      </div>
-    </div>
-
-    <!-- TRATAMIENTO 3: GEMINI & GEMS -->
-    <div id="modulo-gemini-gems" class="scroll-mt-20 border-2 border-tinta bg-niebla p-6 sm:p-8 shadow-field space-y-8">
-      <!-- Parcel Header -->
-      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4">
-        <div class="flex items-center gap-3">
-          <span class="px-2.5 py-1 bg-musgo text-papel font-mono text-xs font-bold border border-tinta">
-            TRATAMIENTO T3
-          </span>
-          <span class="font-mono text-xs text-tinta/70">[COORDENADA: 02, A] // BLOQUE II</span>
-        </div>
-        <span class="font-mono text-xs text-trigo font-bold bg-tierra px-2.5 py-0.5">DURACIÓN: 2.5 HORAS</span>
-      </div>
-
-      <!-- Theory Section -->
-      <div class="space-y-4 max-w-4xl">
-        <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold">
-          Gemini & Gems Especializados
-        </h2>
-        <p class="font-sans text-sm sm:text-base text-tinta/85 leading-relaxed">
-          Diseña y entrena tus propios "Gems" (asistentes personalizados con instrucciones permanentes) para tareas recurrentes de campo: cálculo de dosis de pulverización, muestreo secuencial y diagnóstico fotográfico asistido.
-        </p>
-        <ul class="space-y-2 text-xs font-mono text-tinta/90 pt-1">
-          <li class="flex items-start gap-2">
-            <span class="text-musgo font-bold">▶</span>
-            <span>Creación de Gem para calibración de pulverizadoras y boquillas</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-musgo font-bold">▶</span>
-            <span>Gem auditor de datos de campo y detección de outliers</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-musgo font-bold">▶</span>
-            <span>Análisis multimodal: interpretación de imágenes de hojas sintomáticas</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Video Tutorial Component replacing static step cards -->
-      <VideoTutorial 
-        videoId="dQw4w9WgXcQ"
-        title="Tutorial: Creación de Gems en Gemini paso a paso"
-        toolName="Google Gemini"
-        toolUrl="https://gemini.google.com/"
-        steps={stepsGemini}
-      />
-
-      <!-- Literal Prompt (PROT-03) goes AFTER the tutorial -->
-      <div class="border-t border-tinta/20 pt-6">
-        <PromptInspector 
-          protocolId="PROT-03"
-          title="Definición del System Prompt del Gem"
-          role="Auditor de Calidad de Datos Agrícolas & Calibración"
-          inputData="Registros brutos de pesaje de parcelas y recuento de espigas"
-          outputFormat="Reporte de consistencia y alertas de posibles errores de transcripción"
-          promptText={`[CONFIGURACIÓN DEL GEM]: "AgroData Quality Auditor"
-
-[ROL]: Eres un auditor estadístico especializado en ensayos DBCA. Tu función es verificar la integridad de los datos levantados en campo antes de correr análisis en R o Python.
-
-[REGLAS]:
-- Verifica si los valores de rendimiento se encuentran dentro del rango biológico admisible (CV esperado < 15%).
-- Señala si hay parcelas perdidas o valores extremos (> 2.5 desviaciones estándar).
-- Genera el código R preliminar para visualización de boxplots por bloque.`}
-        />
-      </div>
-
-      <!-- Parcel Closing Direct Action Link Button -->
-      <div class="pt-4 border-t border-tinta/20 flex flex-wrap items-center justify-between gap-4">
-        <span class="font-mono text-xs text-tinta/70">
-          MOTOR DE IA // GOOGLE GEMINI & GEMS PERSONALIZADOS
-        </span>
-        <a 
-          href="https://gemini.google.com/" 
-          target="_blank" 
-          rel="noopener"
-          class="inline-flex items-center justify-center px-6 py-3.5 bg-musgo text-papel font-mono text-xs font-bold tracking-wider uppercase border-2 border-tinta shadow-field hover:shadow-field-hover hover:bg-tierra transition-all"
-        >
-          Abrir Gemini →
-        </a>
-      </div>
-    </div>
-
-    <!-- TRATAMIENTO 4: DOCS & AUTOMATIZACIÓN -->
-    <div id="modulo-docs-casos" class="scroll-mt-20 border-2 border-tinta bg-papel p-6 sm:p-8 shadow-field space-y-8">
-      <!-- Parcel Header -->
-      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-tinta/20 pb-4">
-        <div class="flex items-center gap-3">
-          <span class="px-2.5 py-1 bg-musgo text-papel font-mono text-xs font-bold border border-tinta">
-            TRATAMIENTO T4
-          </span>
-          <span class="font-mono text-xs text-tinta/70">[COORDENADA: 02, B] // BLOQUE II</span>
-        </div>
-        <span class="font-mono text-xs text-trigo font-bold bg-tierra px-2.5 py-0.5">DURACIÓN: 2 HORAS</span>
-      </div>
-
-      <!-- Theory Section -->
-      <div class="space-y-4 max-w-4xl">
-        <h2 class="font-fraunces text-3xl sm:text-4xl text-tinta font-bold">
-          Docs & Automatización de Informes Técnicos
-        </h2>
-        <p class="font-sans text-sm sm:text-base text-tinta/85 leading-relaxed">
-          Ensamblaje del flujo completo: desde los datos brutos de la libreta de campo hasta el informe técnico estructurado en Google Docs, listo para clientes, comités científicos o directivos.
-        </p>
-        <ul class="space-y-2 text-xs font-mono text-tinta/90 pt-1">
-          <li class="flex items-start gap-2">
-            <span class="text-musgo font-bold">▶</span>
-            <span>Plantillas dinámicas de informes DBCA con IA integrada</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-musgo font-bold">▶</span>
-            <span>Redacción automatizada de resúmenes ejecutivos y conclusiones técnicas</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-musgo font-bold">▶</span>
-            <span>Flujo de revisión crítica y estandarización de formatos</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Video Tutorial Component replacing static step cards -->
-      <VideoTutorial 
-        videoId="dQw4w9WgXcQ"
-        title="Tutorial: Automatización de Informes en Google Docs paso a paso"
-        toolName="Google Docs"
-        toolUrl="https://docs.new"
-        steps={stepsDocs}
-      />
-
-      <!-- Literal Prompt (PROT-04) goes AFTER the tutorial -->
-      <div class="border-t border-tinta/20 pt-6">
-        <PromptInspector 
-          protocolId="PROT-04"
-          title="Generación de Informe Técnico DBCA"
-          role="Redactor Científico y Técnico Agronómico"
-          inputData="Resultados estadísticos ANOVA y prueba Tukey (p < 0.05)"
-          outputFormat="Informe técnico con introducción, metodología, discusión y recomendaciones"
-          promptText={`[INSTRUCCIÓN]: Redacta la sección de Discusión de Resultados para el informe final del ensayo "Evaluación de Bioinsumos en Tomate bajo DBCA".
-
-[DATOS CLAVE]:
-- Tratamiento T3 (Bioestimulante foliar) superó significativamente al testigo (T0) en un 24.3% de biomasa fresca (Tukey p = 0.012).
-- No se observaron diferencias significativas en número de frutos por planta entre T2 y T3.
-
-[REQUISITOS]:
-- Explica los resultados basándote en la actividad auxínica y la absorción de nutrientes.
-- Mantén un tono técnico riguroso, sin adjetivos comerciales.`}
-        />
-      </div>
-
-      <!-- Parcel Closing Direct Action Link Button -->
-      <div class="pt-4 border-t border-tinta/20 flex flex-wrap items-center justify-between gap-4">
-        <span class="font-mono text-xs text-tinta/70">
-          HERRAMIENTA FINAL // GOOGLE DOCS & INFORMES TÉCNICOS
-        </span>
-        <a 
-          href="https://docs.new" 
-          target="_blank" 
-          rel="noopener"
-          class="inline-flex items-center justify-center px-6 py-3.5 bg-musgo text-papel font-mono text-xs font-bold tracking-wider uppercase border-2 border-tinta shadow-field hover:shadow-field-hover hover:bg-tierra transition-all"
-        >
-          Abrir Google Docs →
         </a>
       </div>
     </div>

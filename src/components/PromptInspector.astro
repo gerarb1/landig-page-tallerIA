@@ -1,32 +1,29 @@
 ---
 interface Props {
-  protocolId: string;
+  protocolId?: string;
   title: string;
-  role: string;
-  inputData: string;
-  outputFormat: string;
+  role?: string;
+  inputData?: string;
+  outputFormat?: string;
   promptText: string;
+  badgeRight?: string;
+  badgeLeft?: string;
+  engine?: string;
 }
 
 const {
   protocolId = "PROT-01",
   title = "Calibración de Contexto Agronómico",
-  role = "Especialista en Fitopatología y Protección Vegetal",
-  inputData = "Variables: Cultivo, Incidencia (%), Severidad (escala 1-5), Fenología",
-  outputFormat = "Tabla Markdown con recomendación de manejo y umbral de acción",
-  promptText = `[SISTEMA]: Actúa como investigador agronómico senior con 15 años de experiencia en diseño experimental (DBCA) y manejo integrado de cultivos.
-
-[CONTEXTO DEL ENSAYO]:
-- Parcela: Lote 4B - Variedad experimental
-- Tratamiento actual: Control biológico vs. Químico estándar
-- Registro de humedad relativa: > 85% durante 72h
-
-[INSTRUCCIÓN]:
-Analiza los siguientes datos de campo y genera:
-1. Resumen técnico de dispersión del patógeno.
-2. Contraste de medias preliminar.
-3. Protocolo de aplicación preventiva ajustado a buenas prácticas agrícolas (BPA).`
+  role = "",
+  inputData = "",
+  outputFormat = "",
+  promptText = "",
+  badgeRight = "// LISTO PARA COPIAR",
+  badgeLeft = "PROMPT LITERAL (CÓDIGO DE CAMPO)",
+  engine = "MOTOR: GEMINI PRO // NOTEBOOKLM",
 } = Astro.props;
+
+const hasMetadata = Boolean(role || inputData || outputFormat);
 ---
 
 <div class="border-2 border-tinta bg-tierra text-papel rounded-none p-5 shadow-field my-4 font-mono text-xs">
@@ -37,29 +34,37 @@ Analiza los siguientes datos de campo y genera:
       </span>
       <span class="text-trigo font-semibold text-xs">{title}</span>
     </div>
-    <span class="text-papel/50 text-[10px]">MOTOR: GEMINI PRO // NOTEBOOKLM</span>
+    <span class="text-papel/50 text-[10px]">{engine}</span>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3 text-[11px] text-papel/80">
-    <div class="bg-tinta/60 p-2.5 border border-papel/10">
-      <strong class="text-trigo block mb-1">// ROL DEFINIDO:</strong>
-      <p class="font-sans text-xs">{role}</p>
+  {hasMetadata && (
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3 text-[11px] text-papel/80">
+      {role && (
+        <div class="bg-tinta/60 p-2.5 border border-papel/10">
+          <strong class="text-trigo block mb-1">// ROL DEFINIDO:</strong>
+          <p class="font-sans text-xs">{role}</p>
+        </div>
+      )}
+      {inputData && (
+        <div class="bg-tinta/60 p-2.5 border border-papel/10">
+          <strong class="text-trigo block mb-1">// PARÁMETROS DE ENTRADA:</strong>
+          <p class="font-sans text-xs">{inputData}</p>
+        </div>
+      )}
+      {outputFormat && (
+        <div class="bg-tinta/60 p-2.5 border border-papel/10">
+          <strong class="text-trigo block mb-1">// FORMATO DE SALIDA:</strong>
+          <p class="font-sans text-xs">{outputFormat}</p>
+        </div>
+      )}
     </div>
-    <div class="bg-tinta/60 p-2.5 border border-papel/10">
-      <strong class="text-trigo block mb-1">// PARÁMETROS DE ENTRADA:</strong>
-      <p class="font-sans text-xs">{inputData}</p>
-    </div>
-    <div class="bg-tinta/60 p-2.5 border border-papel/10">
-      <strong class="text-trigo block mb-1">// FORMATO DE SALIDA:</strong>
-      <p class="font-sans text-xs">{outputFormat}</p>
-    </div>
-  </div>
+  )}
 
   <!-- Prompt Code Block -->
   <div class="relative">
     <div class="text-[10px] text-papel/40 pb-1 flex justify-between items-center">
-      <span>PROMPT LITERAL (CÓDIGO DE CAMPO)</span>
-      <span class="text-trigo text-[10px]">// LISTO PARA COPIAR</span>
+      <span>{badgeLeft}</span>
+      <span class="text-trigo text-[10px] font-bold">{badgeRight}</span>
     </div>
     <pre class="bg-tinta p-3.5 border border-papel/20 text-papel/90 text-xs overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed select-all">{promptText}</pre>
   </div>
